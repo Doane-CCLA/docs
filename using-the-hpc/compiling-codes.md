@@ -1,6 +1,4 @@
-
-
-# CADES SHPC Compiling Codes
+# Compiling Codes
 
 ## C, Fortran Examples
 
@@ -8,7 +6,7 @@ coming soon.
 
 ## MPI Example
 
-```            
+```text
  //hello_mpi.c
 
  #include
@@ -32,15 +30,15 @@ int main(int argc, char** argv) {
   // Finalize the MPI environment.
   MPI_Finalize();
   }
-```                      
+```
 
-To compile mpi example, please load gcc and openmpi modules. After loading the modules, use gcc to compile hello_mpi.c. For example,
+To compile mpi example, please load gcc and openmpi modules. After loading the modules, use gcc to compile hello\_mpi.c. For example,
 
-```                    
+```text
 module load gcc/5.3.0
 module load openmpi/2.0.0
 gcc $OPENMPI_INC -o mpi_test.o -c mpi_test.c
-```        
+```
 
 ## CUDA/GPU Example
 
@@ -49,3 +47,4 @@ coming soon.
 ## IDL Example
 
 coming soon.
+
