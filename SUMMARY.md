@@ -14,7 +14,7 @@
 - [Compiling Codes](using-the-hpc/compiling-codes.md)
 - [Running Jobs](using-the-hpc/jobs.md)
 
-## Data Transfer & Storage
+## Data Transfer and Storage
 * [Moving Data](data-transfer-storage/moving-data.md)
     * [Graphical Client SFTP](data-transfer-storage/graphical-sftp.md)
 * [Globus Data Transfer Tool](data-transfer-storage/globus-overview.md)
