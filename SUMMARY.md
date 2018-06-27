@@ -1,8 +1,8 @@
 ## Git Version Control
-- [Git Basics](git/git-basics.md)
-- [Git and Atom](git/git-and-atom.md)
-- [Git in the Command Line](git/git-command-line.md)
-- [Git Scenarios](git/git-scenarios.md)
+- [Git Basics](git-version-control/git-basics.md)
+- [Git and Atom](git-version-control/git-workflow.md)
+- [Git in the Command Line](git-version-control/git-command-line.md)
+- [Git Scenarios](git-version-control/git-scenarios.md)
 
 ## Using the HPC
 - [Overview](using-the-hpc/overview.md)
