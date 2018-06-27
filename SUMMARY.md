@@ -15,9 +15,9 @@
 - [Running Jobs](using-the-hpc/jobs.md)
 
 ## Data Transfer and Storage
-* [Moving Data](data-transfer-storage/moving-data.md)
-    * [Graphical Client SFTP](data-transfer-storage/graphical-sftp.md)
-* [Globus Data Transfer Tool](data-transfer-storage/globus-overview.md)
-    * [Globus Endpoints](data-transfer-storage/globus-endpoints.md)
-    * [Globus Transfers & More](data-transfer-storage/globus-transfer.md)
-    * [Globus Command Line Interface](data-transfer-storage/globus-command-line-interface.md)
+* [Moving Data](data-transfer-and-storage/moving-data.md)
+    * [Graphical Client SFTP](data-transfer-and-storage/graphical-sftp.md)
+* [Globus Data Transfer Tool](data-transfer-and-storage/globus-overview.md)
+    * [Globus Endpoints](data-transfer-and-storage/globus-endpoints.md)
+    * [Globus Transfers & More](data-transfer-and-storage/globus-transfer.md)
+    * [Globus Command Line Interface](data-transfer-and-storage/globus-command-line-interface.md)
