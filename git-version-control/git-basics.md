@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [Contributing](../CONTRIBUTE.md) → [Git Basics](git-basics.md)
-
 # Git Basics
 
 **Git**, like other version control (VC) software/system ([see a Wikipedia list](https://en.wikipedia.org/wiki/List_of_version_control_software)), tracks changes to a file system over time. It is typically used in software development but can be used to monitor changes in any file.
@@ -8,17 +6,15 @@
 
 📝 **Note:** This tutorial uses only the command line. After you have learned the basics of Git, you can explore a Git workflow [in the command line](git-command-line.md), [with the Atom text editor](git-workflow.md), and also common [Git scenarios](git-scenarios.md).
 
-## ORNL Git Resources
+## Git Resources
 
 When we talk about Git, we say that a **repository** stores files. This term means that you have a folder that is currently being tracked by Git. It is common, although optional, to use one of the Git repository (repo) services (GitHub, GitLab, BitBucket, etc.). You could easily set up Git tracking on your local machine only, but one of the perks to using Git is that you can share your files with others and a team can edit files collaboratively. The ability to collaborate is one of the many reasons why hosted Git repos are so popular.
 
 > **Repository** - the Git data structure which contains files and folders, as well as how the files/folders have changed over time
 
-ORNL provides two GitLab servers <https://code.ornl.gov> and <https://code-int.ornl.gov>, the latter being accessible only inside of ORNL. Project owners control access to GitLab repositories. You may log in and create your projects and repositories, and share them with others.
-
 ## Accessing GitLab
 
-- In your browser, navigate to <https://code.ornl.gov/> and login using your UCAMS credentials. Click on the green button at the top of the window that says `New project`.
+- In your browser, navigate to <https://gitlab.com/> and login using your credentials. Click on the green button at the top of the window that says `New project`.
 - Choose the `Blank project` tab, create a name for the project, and select the "Visibility Level" that you prefer. Then click `Create project`.
 - Notice that GitLab has provided instructions to perform Git setup and initialization of your repository. We will follow those instructions.
 - _(Optional)_ Prior to cloning the repository, consider adding your SSH key to your GitLab profile so you are not prompted for credentials after every commit. To add your public SSH key to GitLab:
@@ -62,7 +58,7 @@ ORNL provides two GitLab servers <https://code.ornl.gov> and <https://code-int.o
 
     - Windows: download [Git for Windows](https://gitforwindows.org/) and install it. Also, this tutorial utilizes a Bash command line interface, therefore, you should use _Git Bash_, which is a part of the Git installation package for Windows.
 
-- Setup Git with your access credentials to GitLab with the following commands (use your ORNL email):
+- Setup Git with your access credentials to GitLab with the following commands:
 
   ```bash
   git config --global user.name "your_username"
@@ -82,7 +78,7 @@ ORNL provides two GitLab servers <https://code.ornl.gov> and <https://code-int.o
   > **Clone** - is the equivalent of making a local copy on your computer
 
   ```bash
-  git clone git@code.ornl.gov:2ws/example-project.git
+  git clone git@gitlab.com:username/example-project.git
   cd example-project/
   ```
 
@@ -113,10 +109,10 @@ ORNL provides two GitLab servers <https://code.ornl.gov> and <https://code-int.o
 > **Branch** - a version of the repository that splits from the primary version<br>
 > **Merge** - using the changes from one branch and adding them to another
 
-- A branch **checkout** enables you to make changes to files without changing the content of the `master` branch. To create and checkout a branch called "adding-readme":
+- A branch **checkout** enables you to make changes to files without changing the content of the `master` branch. To create and checkout a branch called "add-readme":
 
   ```bash
-  git checkout adding-readme
+  git checkout add-readme
   ```
 
 > **Checkout** - Git command to change branches
@@ -137,19 +133,19 @@ ORNL provides two GitLab servers <https://code.ornl.gov> and <https://code-int.o
   ```bash
   git add README.md
   git commit -m "added a description of the repository"
-  git push --set-upstream origin adding-readme
+  git push --set-upstream origin add-readme
   ```
 
-  - In future pushes, you can simplify the last command by typing only `git push`. However, the first time you push to a new branch, you have to tell GitLab that you have created a new branch on your computer and the changes that you are pushing should be pushed to a new _remote_ branch called `adding-readme`.
+  - In future pushes, you can simplify the last command by typing only `git push`. However, the first time you push to a new branch, you have to tell GitLab that you have created a new branch on your computer and the changes that you are pushing should be pushed to a new _remote_ branch called `add-readme`.
 
 ## Merging Content from a Development Branch to the Master Branch
 
-After completing the previous section, we have two branches: `adding-readme` and `master`. We are ready to move the `adding-readme` content to the `master` branch.
+After completing the previous section, we have two branches: `add-readme` and `master`. We are ready to move the `add-readme` content to the `master` branch.
 
 You can create a merge request using the GitLab GUI.
 
 - From the left menu panel in Gitlab, select `Merge Request` then the green `New merge request` button.
-- Select your branch in the "Source Branch" side (`adding-readme`).
+- Select your branch in the "Source Branch" side (`add-readme`).
 
   - Target branch is _master_.
   - Click `Compare branches and continue`.

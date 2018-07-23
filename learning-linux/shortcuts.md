@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [Linux](linux-intro.md) → [Linux Shortcuts](shortcuts.md)
-
 # Useful Linux Shortcuts
 
 macOS     | Windows          | Action

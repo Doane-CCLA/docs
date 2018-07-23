@@ -1,74 +1,77 @@
-# Software
+[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [SHPC Condo User Guide](overview.md) → [Software](software.md)
 
-DEFAULT SHELL
+# SHPC Condo Software Configuration
 
-The default shell on the CADES cluster is bash. However, CADES supports the following shells:
+In this section, we discuss the SHPC Condos software configuration. Our software environment uses Linux environment [modules](software/modules.md) to perform this configuration. The software modules available to users also contain preconfigured [compiler toolchains](software/compilers.md), or programming environments which include parallel compiler wrappers and associated MPI stacks. There are also [workflow tools](software/workflows.md) that may help with your applications as well.
 
-* `bash`
-* `tcsh`
-* `csh`
-* `ksh`
+## Job Scheduler
 
-USING MODULES  
-The modules software package allows you to dynamically modify your user environment by using pre-written module files.
+SHPC utilizes Torque/Moab as a resource manager to schedule jobs, where Moab is used as an external scheduler for the PBS resource management system including job queues and the compute resources.
 
-Each module file contains the information needed to configure the shell for an application. After the modules software package is initialized, the environment can be modified on a per-module basis using the module command, which interprets a module file. Typically, a module file instructs the module command to alter or set shell environment variables such as PATH or MANPATH. Module files can be shared by many users on a system, and users can have their own personal collection to supplement and/or replace the shared module files. As a user, you can add and remove module files from your current shell environment. The environment changes performed by a module file are viewed by using the module command. More information on modules are found by running man module.
+📝 The job scheduler supports a maximum walltime of 48 hours. If you need more time to run a job, please [contact us](../../SUPPORT.md).
 
-To access ARM specific softwares in your environment, add following to your `.bashrc`
+## Modules
 
-```text
-export MODULEPATH=/software/user_tools/current/cades-arm/modulefiles:$MODULEPATH
+SHPC has more than one hundred software packages installed. Our software environment uses Linux (CentOS 7.x) environment modules to manage versions and dependencies of software packages. When you load a module, it sets the environment variables necessary for running your program.
+
+A list of available software modules can be viewed by typing `module avail`.
+
+**Modules: Local repository**<br>
+By default the local repository is used as a source of software installations. To list available modules, type `module avail`. To load a module, use `module load module_name`. Similarly, unload modules by typing `module unload module_name`.
+
+**Modules: CVMFS-based repository**<br>
+A CVMFS (Cern Virtual File System)-based repository is available for use that has several software packages available for use. To use the CVMFS-based repository run the following commands from your login node:
+
+```bash
+source /software/dev_tools/swtree/cs400/modulefiles/switch-modules.sh
 ```
 
-SUMMARY OF MODULE COMMANDS
+```bash
+switch_modules oasis
+```
 
-| Command | Description |
-| --- | --- |
-| module list | Lists modules currently located in user's environment |
-| module avail | Lists all available modules on a system in condensed format |
-| module avail -l | Lists all available modules on a system in long format |
-| module display | Shows environment changes that will be made by loading a given module |
-| module load | Loads a module |
-| module unload | Unloads a module |
-| module help | Shows help for a module |
-| module swap | Swaps a currently loaded module for an unloaded module |
+After entering the above commands the new repository should be active and the command below will list the software available for use:
 
-## Available Software
+```bash
+module avail
+```
 
-Additional software may be installed within the cluster, as required. To check list of available software run command `module avail`.
+Similarly `switch_modules local` will bring back the local modules to use.
 
-| Module | Description |
-| --- | --- |
-| ADI | ARM Data Integrator, ADI, is an open source framework that automates the process of retrieving and preparing data for analysis, simplifies the design and creation of output data products produced by the analysis, and provides a modular, flexible software development architecture for implementing algorithms. |
-| PE-gnu PE-intel PE-nag PE-pgi: | This module sets up the Intel Programming Environment \(PE\). |
-| tensorflow/0.11-cpu tensorflow/0.11-gpu: | Tensoflow is a ML engine developed by Google. |
-| R/3.3.2 | R is a programming language and software environment for statistical computing and graphics. |
-| theano/0.9-conda | Theano is a python library to support ML. |
-| caffe/1.0-conda | Caffe is a python library to support ML. |
-| ncl | NCL is an interpreted language designed specifically for scientific data analysis and visualization. |
-| cuda/8.0 | CUDA is a parallel computing platform that enables GPU for general purpose processing. |
-| keras/2.0.2-conda | keras is a python library to support ML. |
-| cdo | CDO is a collection of command line Operators to manipulate and analyse Climate and NWP model Data. |
-| nco | NCO The NCO toolkit manipulates and analyzes data stored in netCDF-accessible formats, including DAP, HDF4, and HDF5. |
-| ATLAS | ATLAS is an optimized BLAS library with limited LAPACK routines. |
-| anaconda2 | Anaconda is an open source distribution of the Python and R programming languages for large-scale data processing, predictive analytics, and scientific computing, that aims to simplify package management and deployment. |
-| git | Git is a is a version control system primarily used for software development for tracking changes in computer files and coordinating work on those files among multiple people. |
-| data\_wrapper/1.0.0 | The data wrapper provides a convenient wrapper around globus-url-copy. It simplifies the usage of globus-url-copy. |
-| postgresql | PostgreSQL is an object-relational database management system. |
-| netcdf/4.3.3.1 | NetCDF is a data model, library, and file format for storing and managing data. |
+Additional information on SHPC modules may be found [here](software/modules.md).
 
-To see list of softwares loaded in your environment, run command `module list`
+## Compiler ToolChains
 
-Some of the currently loaded modules are:
+Depending on the application/code you are working on, you might choose a specific compiler to achieve the best performance of your programs. Compiler toolchains such as GNU, Intel, PGI and NAG are already installed to work with other libraries. [See here](software/compilers.md) for more information on SHPC compilers
 
-* gcc/5.3.0
-* git/2.11.0
-* python/2.7.12
-* cuda/7.5
-* hdf5-parallel/1.8.17
-* netcdf/4.3.3.1
+## Workflow Tools
 
-## Requesting New Software
+Workflow tools orchestrate multi-stage computations. Several [workflow tools](software/workflows.md) are available on SHPC.
 
-To request a new software, please contact cades-help@ornl.gov
+## Notes on Specific Software Usage
 
+### Singularity Containers over MPI-IB
+By default, singularity does not use the InfiniBand libraries when doing message passing with MPI. In order to make sure Singularity uses the InfiniBand libraries while using MPI, perform the following step after loading the Singularity module:
+
+```
+source sourceme_for_mpioverib
+```
+
+Following the above step, the Singularity containers should use the InfiniBand libraries when running MPI applications.
+
+### Visualizing Remote Data over SSH using Visit
+
+Visit is a well-known visualization software package that is available on SHPC. Visit may be configured by creating the profile of SHPC Condo to visualize data from your local Visit client. In order to do so, follow the steps as shown below on your local Visit:
+
+1. Start Visit and go to `Options` → `Host profiles`
+2. Press `New Host` and populate the fields as described below
+    - Host nickname: `cades`
+    - Remote host name: `or-condo-login.ornl.gov`
+    - Host name aliases: `or-condo-login#g`
+    - Path to Visit installation: `/software/dev_tools/swtree/cs400_centos7.2_pe2016-08/visit/2.10.3/centos7.2_gnu5.3.0`
+    - Username: `<your_ucams_id>`
+5. Check the `Tunnel data ...` checkbox
+6. Click on `Apply`
+7. Now in the `file` → `open` menu, click on the dropdown (&#9662;) and select `cades`
+8. Enter your password in the dialog box that opens
+9. You should be able to see your data on the SHPC file system which can be opened just as if it were local data

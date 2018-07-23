@@ -1,8 +1,6 @@
-[CADES](http://support.cades.ornl.gov/) &rarr; [User Documentation](../../README.md)  &rarr; [User-Provided Tutorials for CADES Cloud](../cloud-info/getting-started.md) &rarr; [Launch a Docker Container](#)
+# Docker Containers
 
-Tutorial contributed by Drew Schmidt. **Note:** User-provided tutorials are not supported by CADES.  
-
-# Background
+## Background
 
 [Docker](https://www.docker.com/) is a [container](https://en.wikipedia.org/wiki/Operating-system-level_virtualization) architecture and ecosystem.  A [linux.com article](https://www.linux.com/news/docker-shipping-container-linux-code) nicely summarizes Docker as follows:
 
@@ -14,13 +12,13 @@ Many of the applications you will be interested in deploying are already configu
 
 
 
-# First Steps
+## First Steps
 
-We will assume that you are already reasonably familiar with the CADES Cloud system.  If not, consider reading the [user documentation](http://support.cades.ornl.gov/user-documentation/_book/).  Make sure you read the section titled: [Launch a VM Instance from an Image](http://support.cades.ornl.gov/user-documentation/_book/openstack/create-vm/launch-vm.html)
+We will assume that you are already reasonably familiar with the CCLA Cloud system.  If not, consider reading the [user documentation](http://support.cades.ornl.gov/user-documentation/_book/).  Make sure you read the section titled: [Launch a VM Instance from an Image](http://support.cades.ornl.gov/user-documentation/_book/openstack/create-vm/launch-vm.html)
 
 However, you get there, launch an Ubuntu 16.04 vm.
 
-![](launch.png)
+![](screenshots/launch.png)
 
 For now, you can keep the setup very basic, just following the instructions outlined in the "Launch a VM Instance" page linked above.
 
@@ -28,7 +26,7 @@ You may eventually be interested in more complicated configurations.  For exampl
 
 
 
-# Install Docker
+## Install Docker
 
 Next, you need to [ssh to your new vm](../../access-vm/access-vm.md).  I named my instance `t1`, so when I login, it shows me as `cades@t1`.  Your prompt will show `cades@whatever-you-named-your-vm`.
 
@@ -58,11 +56,9 @@ sudo apt-get install -y docker docker.io
 
 And if all is well, you should have Docker installed on your vm.
 
+## Run a Test Container
 
-
-# Run a Test Container
-
-While still ssh'd to your CADES Cloud vm, you can test that your setup is working correctly by running:
+While still ssh'd to your CCLA Cloud vm, you can test that your setup is working correctly by running:
 
 ```bash
 sudo docker pull hello-world
@@ -71,6 +67,6 @@ sudo docker run hello-world
 
 If all goes well, you will have a small "hello world"-like output and return to your terminal, and should look something like this:
 
-![](hw.png)
+![](screenshots/hw.png)
 
 That's it!

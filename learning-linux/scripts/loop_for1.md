@@ -1,4 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../../README.md) → [Linux](../linux-commands.md) → [Managing Files](../managing-files.md) → [Loop For E1](#)
 
 - Create the `test_files` directory inside `/tmp` with `mkdir /tmp/test_files`
 

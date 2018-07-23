@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [Linux](linux-intro.md) → [Status of Processes](services.md)
-
 # Services
 
 _Before checking the status of the SSH service, make sure you have the SSHD service enabled._

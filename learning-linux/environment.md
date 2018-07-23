@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [Linux](linux-intro.md) → [Environment Customization](environment.md)
-
 # Environment Variables
 
 ## Before Starting

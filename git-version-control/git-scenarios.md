@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [Contributing](../CONTRIBUTE.md) → [Git Scenarios](git-scenarios.md)
-
 # Git Scenarios
 
 This document includes common Git scenarios and how to deal with them.
@@ -96,7 +94,6 @@ If you need something a little more robust, you can use `git reset --hard HEAD`.
 When multiple people are working in the same repository, the number of commits can be anywhere between a few or several thousands depending on the size of your development team. Using clear, descriptive commit messages can help "integration managers" merge content and, perhaps more importantly, search for and find commits that have introduced a bug.
 
 Another recommendation by the author of "Pro Git" says, "try to make your changes digestible — don’t code for a whole weekend on five different issues and then submit them all as one massive commit on Monday."
-
 
 
 ## I do not want Git to track a particular file/directory

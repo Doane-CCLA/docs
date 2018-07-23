@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [Linux](linux-intro.md) → [File Permissions](file-permissions.md)
-
 # File & Directory Permissions in Linux
 
 The `chmod` command is used to control the access permissions for directories. We can use the octal notation to set permissions. To describe the octal notation, we can add permission values to obtain new, combined (octal) values.

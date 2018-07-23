@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [Linux](linux-intro.md) → [Protocols](protocols.md)
-
 # Protocols
 
 Protocols are a set of rules or standards that define the communication between devices on a network.

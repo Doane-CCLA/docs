@@ -1,4 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../../README.md) → [Linux](../linux-commands.md) → [Essential Commands](essential-commands.md) → [Script: Backup](#)
 
 ```bash
 #!/bin/bash

@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [Linux](linux-intro.md) → [Scheduling Tasks with cron](scheduling-cron.md)
-
 # Scheduling Tasks with cron
 
 📝 **Note:** The majority of the following commands must be run by the superuser @root

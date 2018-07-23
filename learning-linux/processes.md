@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [Linux](linux-intro.md) → [Processes](processes.md)
-
 # Linux Processes
 
 Processes are tasks that the operating system carries out.

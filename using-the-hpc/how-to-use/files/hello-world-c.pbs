@@ -1,0 +1,30 @@
+#!/bin/bash
+### Set the job name. Your output files will share this name.
+#PBS -N MyMPIhw
+### Enter your email address. Errors will be emailed to this address.
+#PBS -M YourEmailHere@ornl.gov
+### Node spec, number of nodes and processors per node that you desire.
+### One node and 16 cores per node in this case.
+#PBS -l nodes=1:ppn=16
+### Tell PBS the anticipated runtime for your job, where walltime=HH:MM:S.
+#PBS -l walltime=0:00:2:0
+### The LDAP group list they need; cades-birthright in this case.
+#PBS -W group_list=cades-birthright
+### Your account type; birtright in this case.
+#PBS -A birthright
+### Quality of service set to burst or std.
+#PBS -l qos=std
+### Use GPUs or comment out to use only CPUs (CPU-only runs require qos=burst).
+#PBS -q gpu
+### Remove old modules to ensure a clean state.
+module purge
+### Load modules (your programming environment)
+module load PE-gnu
+### Check loaded modules
+module list
+### Switch to the working directory (path of your PBS script).
+cd $PBS_O_WORKDIR
+### Show current directory.
+pwd
+### MPI run followed by the name/path of the binary.
+mpirun hello-world

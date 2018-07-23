@@ -1,12 +1,8 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [Contributing](../CONTRIBUTING.md) → [Git Workflow](contributing/git-workflow.md)
+# Recommended Workflow Using Git and Atom
 
-# CADES Recommended Workflow Using Git and Atom
-
-### GitLab Houses our Documentation
+### GitLab
 
 GitLab is a popular platform to share code, store software solutions, and host documentation.
-
-ORNL provides two GitLab servers https://code.ornl.gov and https://code-int.ornl.gov, the latter being accessible only inside of ORNL.
 
 Project owners control access to GitLab repositories. You may log in and create your projects and repositories, and share them with others.
 
@@ -185,11 +181,3 @@ You can create a merge request using the GitLab GUI.
 
   - Assign to: _< Project Owner, etc. >_
   - Click `Submit merge request`.
-
-## Previewing Changes
-
-When you push a branch, your changes are built in a "Review Environment" at http://user-documentation-stf011.granite.ccs.ornl.gov/_review/ and allows you to click on the name of your branch.
-
-A link to this review environment is available on the Merge Request page that is created for your branch. This allows reviewers to take a quick glance at changes before we merge them into production.
-
-&#128221; **Note:** Preview sites are a prototype in the workflow. This feature may not always work and is offered as an unsupported convenience.

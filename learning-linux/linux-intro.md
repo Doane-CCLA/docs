@@ -1,8 +1,6 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [Linux](linux-intro.md)
-
 # Linux Commands
 
-The CADES team supports solutions based on Linux, so our researchers and users may want to improve their familiarity with it.
+The CCLA team supports solutions based on Linux, so our researchers and users may want to improve their familiarity with it.
 
 We have grouped this information into categories which are the most used Linux commands as follows:
 

@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [Linux](linux-intro.md) → [Bash Scripting](bash-scripting.md)
-
 # Bash Scripting
 
 ## Considerations

@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [Linux](linux-intro.md) → [System Configuration](system-config.md)
-
 # System Configuration
 
 - #### hostname: displays the name of the computer

@@ -1,8 +1,6 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [Contributing](../CONTRIBUTE.md) → [Git in the Command Line](git-command-line.md)
-
 # Git Workflow from the Command Line
 
-There are many reasons one would prefer to work from the command line. Regardless of your reasons, here is how to contribute to the CADES documentation using only command line tools.
+There are many reasons one would prefer to work from the command line. Regardless of your reasons, here is how to use Git/GitLab using only command line tools.
 
 <a target="_new" href="screenshots/git-workflow-steps.png"><img src="screenshots/git-workflow-steps.png" style="border-style:ridge;border-color:#bfbfbf;border-width:1px;width:550px;" /></a><!-- o_ -->
 
@@ -66,13 +64,13 @@ It is assumed that users of this guide understand basic Git/version control prin
 
   - Click on your user image in the top-right of the GitLab window.
   - Select `Settings`.
-  - On the left, click `ssh keys`.
+  - On the left, click `SSH keys`.
   - Paste your _**public**_ ssh key in the box, provide a title, and save by clicking `Add key`.
 
 - Clone an existing repository. In GitLab, this information is found on the "Overview" page of the repository.
 
   ```bash
-  git clone git@code-int.ornl.gov:cades-ops/user-documentation.git
+  git clone git@gitlab.com:username/example-project.git
   ```
 
 ## Checkout
