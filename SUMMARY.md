@@ -41,7 +41,7 @@
     - [Compilers](using-the-hpc/how-to-use/compilers.md)
     - [Workflows](using-the-hpc/how-to-use/workflows.md)
     - [Crystal Workflow](using-the-hpc/how-to-use/crystal-workflow.md)
-    -
+
 ## Data Transfer and Storage
 - [Moving Data](data-transfer-and-storage/moving-data.md)
   - [Graphical Client SFTP](data-transfer-and-storage/graphical-sftp.md)
