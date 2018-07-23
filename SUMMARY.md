@@ -43,7 +43,6 @@
     - [Crystal Workflow](using-the-hpc/how-to-use/crystal-workflow.md)
     -
 ## Data Transfer and Storage
-<<<<<<< HEAD
 - [Moving Data](data-transfer-and-storage/moving-data.md)
   - [Graphical Client SFTP](data-transfer-and-storage/graphical-sftp.md)
 - [Globus Data Transfer Tool](data-transfer-and-storage/globus-overview.md)
@@ -54,14 +53,3 @@
 ## Tools
 - [Docker Containers](tools/docker.md)
 - [Singularity Containers](tools/singularity.md)
-=======
-* [Moving Data](data-transfer-and-storage/moving-data.md)
-    * [Graphical Client SFTP](data-transfer-and-storage/graphical-sftp.md)
-* [Globus Data Transfer Tool](data-transfer-and-storage/globus-overview.md)
-    * [Globus Endpoints](data-transfer-and-storage/globus-endpoints.md)
-    * [Globus Transfers & More](data-transfer-and-storage/globus-transfer.md)
-    * [Globus Command Line Interface](data-transfer-and-storage/globus-command-line-interface.md)
-    
-## Docker
-- [Launch a Docker Container](docker/docker.md)
->>>>>>> c7108ce48bd4c3e9ae9db5c9ee9233fe9496e20b
