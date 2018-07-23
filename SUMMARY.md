@@ -1,5 +1,7 @@
 - [Support](SUPPORT.md)
 - [Glossary](GLOSSARY.md)
+- [License](LICENSE.md)
+- [Acknowledgement](acknowledge.md)
 
 ## Git Version Control
 - [Git Basics](git-version-control/git-basics.md)
@@ -26,9 +28,9 @@
 
 ## Using the HPC
 - [Overview](using-the-hpc/overview.md)
-- [Hardware](using-the-hpc/hardware.md)
-- [Storage](using-the-hpc/storage.md)
-- [Software](using-the-hpc/software.md)
+    - [Hardware](using-the-hpc/hardware.md)
+    - [Storage](using-the-hpc/storage.md)
+    - [Software](using-the-hpc/software.md)
 - [How to Use](using-the-hpc/how-to-use/how-to-use.md)
     - [Prerequisites](using-the-hpc/how-to-use/prerequisites.md)
     - [Request Access to an Allocation](using-the-hpc/how-to-use/request-access.md)
