@@ -1,3 +1,6 @@
+- [Support](SUPPORT.md)
+- [Glossary](GLOSSARY.md)
+
 ## Git Version Control
 - [Git Basics](git-version-control/git-basics.md)
 - [Git and Atom](git-version-control/git-workflow.md)
