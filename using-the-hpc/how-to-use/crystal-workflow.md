@@ -1,6 +1,5 @@
-[CADES](http://support.cades.ornl.gov/) &rarr; [User Documentation](../../README.md)  &rarr; [SHPC Condo User Guide](../overview.md) &rarr; [Software](../software.md)   &rarr; [Condo Workflows](workflows.md) &rarr; [Crystal Workflows](crystal-workflow.md)
-
 # Crystal Workflow
+
 CrystalFlow is a hypothetical workflow with low-medium complexity that adequately illustrates the benefits and characteristics of scientific computational workflows.
 > &#128221; **Note:** The code, executables, and test data for the crystal workflow is available on ORNL's public [GitLab](https://code.ornl.gov/km0/cades_workflows).
 

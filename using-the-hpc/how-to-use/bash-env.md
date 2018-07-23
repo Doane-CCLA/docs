@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../../README.md) → [SHPC Condo User Guide](../overview.md) → [Software](../software.md) → [Environment Customization](#)
-
 # Customizing Your Environment in SHPC
 
 The SHPC environment may be customized to suit your needs.

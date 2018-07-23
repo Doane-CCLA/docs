@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../../README.md) → [SHPC Condo User Guide](../overview.md) → [Software](../software.md) → [Scheduling Jobs](scheduling-jobs.md)
-
 # Scheduling Jobs
 
 SHPC utilizes Torque/Moab to manage jobs that users submit to various queues on a computer system. Each queue represents a group of resources with attributes necessary for the queue's jobs. You can see the list of queues that SHPC has by typing `qstat -q`. **batch** is the default queue.

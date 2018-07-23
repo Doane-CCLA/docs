@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) &rarr; [User Documentation](../../README.md) &rarr; [SHPC Condo User Guide](../overview.md)  &rarr; [Software](../software.md)  &rarr; [Bash Environment Customization](bash-env.md)  &rarr; [GNU Compiler](#)
-
 # Customizing Your Environment: GNU Compiler
 
 Locate your prompt in your home directory by executing `cd`.

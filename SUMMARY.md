@@ -6,11 +6,11 @@
 
 ## Learning Linux
 - [Learning Linux Commands](learning-linux/linux-intro.md)
-- [Essential Commands](linux/essential-commands.md)
-  - [Script: Backup](learning-linux/scripts/backup.md)
-  - [Script: Seconds](learning-linux/scripts/seconds.md)
+- [Essential Commands](learning-linux/essential-commands.md)
+    - [Script: Backup](learning-linux/scripts/backup.md)
+    - [Script: Seconds](learning-linux/scripts/seconds.md)
 - [Managing Files](learning-linux/managing-files.md)
-  - [Script: Create Files](learning-linux/scripts/loop_for1.md)
+    - [Script: Create Files](learning-linux/scripts/loop_for1.md)
 - [File Permissions](learning-linux/file-permissions.md)
 - [Working with Processes](learning-linux/processes.md)
 - [Services](learning-linux/services.md)
@@ -38,17 +38,18 @@
     - [Scheduling Jobs](using-the-hpc/how-to-use/scheduling-jobs.md)
     - [Bash Environment Customization](using-the-hpc/how-to-use/bash-env.md)
     - [Modules](using-the-hpc/how-to-use/modules.md)
+        - [CVMFS Modules](using-the-hpc/hot-to-use/cvmfs-modules.md)
     - [Compilers](using-the-hpc/how-to-use/compilers.md)
     - [Workflows](using-the-hpc/how-to-use/workflows.md)
-    - [Crystal Workflow](using-the-hpc/how-to-use/crystal-workflow.md)
+        - [Crystal Workflow](using-the-hpc/how-to-use/crystal-workflow.md)
 
 ## Data Transfer and Storage
 - [Moving Data](data-transfer-and-storage/moving-data.md)
-  - [Graphical Client SFTP](data-transfer-and-storage/graphical-sftp.md)
+    - [Graphical Client SFTP](data-transfer-and-storage/graphical-sftp.md)
 - [Globus Data Transfer Tool](data-transfer-and-storage/globus-overview.md)
-  - [Globus Endpoints](data-transfer-and-storage/globus-endpoints.md)
-  - [Globus Transfers & More](data-transfer-and-storage/globus-transfer.md)
-  - [Globus Command Line Interface](data-transfer-and-storage/globus-command-line-interface.md)
+    - [Globus Endpoints](data-transfer-and-storage/globus-endpoints.md)
+    - [Globus Transfers & More](data-transfer-and-storage/globus-transfer.md)
+    - [Globus Command Line Interface](data-transfer-and-storage/globus-command-line-interface.md)
 
 ## Tools
 - [Docker Containers](tools/docker.md)

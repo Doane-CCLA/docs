@@ -1,13 +1,9 @@
-[CADES](http://support.cades.ornl.gov/) &rarr; [User Documentation](../../README.md) &rarr; [SHPC Condo User Guide](../overview.md)  &rarr; [How to Use](how-to-use.md) &rarr; [Prerequisites](prerequisites.md)
-
 # Prerequisites
 
 To properly utilize SHPC Condos, you will need a couple of utilities loaded on your local machine. These utilities are free and widely used for this type of application.
 
 * Required: **SSH client**
 * Recommended: **Bash terminal**
-
-&#128221; **Note:** CADES does not provide support for getting these utilities up and running on your personal computer.
 
 ### MacOS and Linux
 Both macOS and Linux distributions include a Bash terminal and an SSH client by default. No additional software should be required to access SHPC Condos.

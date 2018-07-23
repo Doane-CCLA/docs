@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../../README.md) → [SHPC Condo User Guide](../overview.md) → [Software](software.md) → [Modules](modules.md)
-
 # Modules
 
 Modules are a utility which allow users to load and manage applications and their versions. The modules of software packages allow you to dynamically modify your user environment by using “modulefiles.”

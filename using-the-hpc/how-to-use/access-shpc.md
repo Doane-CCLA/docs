@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../../README.md) → [SHPC Condo User Guide](../overview.md) → [How to Use](how-to-use.md) → [Access Your Allocation](access-shpc.md)
-
 # Access Your SHPC Condo Allocation
 
 After your [access request](request-access.md) has been approved and you have installed the [prerequisites](prerequisites.md), you can log in to the Open Protection Zone or the Moderate Protection Zone.

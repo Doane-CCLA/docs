@@ -1,5 +1,3 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../../README.md) → [SHPC Condo User Guide](../overview.md) → [Execute a Job](execute-a-job.md)
-
 # Execute a Job on Your SHCP Condo Allocation
 
 The tutorial below shows you how to run Wes Kendall's basic "hello world" program, written in C, using the message passing interface (MPI) to scale across the SHPC Condo compute nodes [[1]](#works-cited). This tutorial is intended for users who are new to the SHPC Condo environment and leverages a portable batch system (PBS) script and a C source code.
