@@ -1,6 +1,6 @@
 # Execute a Job on Your SHCP Condo Allocation
 
-The tutorial below shows you how to run Wes Kendall's basic "hello world" program, written in C, using the message passing interface (MPI) to scale across the SHPC Condo compute nodes [[1]](#works-cited). This tutorial is intended for users who are new to the SHPC Condo environment and leverages a portable batch system (PBS) script and a C source code.
+The tutorial below shows you how to run Wes Kendall's basic "hello world" program, written in C, using the message passing interface (MPI) to scale across the HPC Condo compute nodes [[1]](#works-cited). This tutorial is intended for users who are new to the HPC Condo environment and leverages a portable batch system (PBS) script and a C source code.
 
 Additional examples can be found in [C++](examples/cpp.md), [Fortran](examples/fortran.md) or [Python](examples/python.md) sections.
 
@@ -39,13 +39,13 @@ Once you have connected to the login node, you can proceed to Step 2 and begin a
 
 ## Step 2: Create a PBS Script
 
-Below is the PBS script we are using to run an MPI "hello world" program as a batch job. PBS scripts use variables to specify things like the number of nodes and cores used to execute your job, estimated walltime for your job, and which compute resources to use (e.g., GPU _vs._ CPU). The sections below feature an example PBS script for SHPC Condo resources, show you how to create and save your own PBS script, and show you how store the PBS script on an SHPC Condo file system.
+Below is the PBS script we are using to run an MPI "hello world" program as a batch job. PBS scripts use variables to specify things like the number of nodes and cores used to execute your job, estimated walltime for your job, and which compute resources to use (e.g., GPU _vs._ CPU). The sections below feature an example PBS script for HPC Condo resources, show you how to create and save your own PBS script, and show you how store the PBS script on an HPC Condo file system.
 
 Consult the [official Torque documentation](http://docs.adaptivecomputing.com/torque/4-0-2/Content/topics/commands/qsub.htm) for a complete list of PBS variables.
 
 ### Example PBS Script
 
-Here is an example PBS script for running a batch job on a SHPC Condo allocation. We break down each command in the section below.
+Here is an example PBS script for running a batch job on a HPC Condo allocation. We break down each command in the section below.
 
 ```bash
 #!/bin/bash
@@ -67,7 +67,7 @@ pwd
 mpirun hello_world_c
 ```
 
-&#128221; **Note**: This example uses the `cades-birthright` resource. Users can use the `cades-birthright` resource for these examples, but otherwise, the PBS directives for your Division should be used. See the table [on this page](request-access.md#shpc-condo-groups) for the appropriate resource codes.
+&#128221; **Note**: This example uses the `cades-birthright` resource. Users can use the `cades-birthright` resource for these examples, but otherwise, the PBS directives for your Division should be used. See the table [on this page](request-access.md#HPC-condo-groups) for the appropriate resource codes.
 
 ### PBS Script Breakdown
 
@@ -78,8 +78,8 @@ Here, we break down the essential elements of the above PBS script.
 - `#PBS -M your_email@ornl.gov`: add your email address if you would like errors to be emailed to you
 - `#PBS -l nodes=1:ppn=16`: sets the number of nodes and processors per node that you want to use to run your job; in this case, we're using one node and 16 cores per node.
 - `#PBS -l walltime=0:00:6:0`: tells PBS the anticipated runtime for your job, where `walltime=HH:MM:S`
-- `#PBS -W group_list=cades-birthright`: specifies your LDAP group; the full list of SHPC Condo LDAP groups is [here](request-access.md#shpc-condo-groups)
-- `#PBS -A birthright`: specifies your account type; list of account types is found [here](request-access.md#shpc-condo-groups)
+- `#PBS -W group_list=cades-birthright`: specifies your LDAP group; the full list of HPC Condo LDAP groups is [here](request-access.md#HPC-condo-groups)
+- `#PBS -A birthright`: specifies your account type; list of account types is found [here](request-access.md#HPC-condo-groups)
 - `#PBS -l qos=burst`: sets the quality of service (QOS) to <kbd>burst</kbd> or <kbd>std</kbd>
     - Burst jobs allow a user to leverage more nodes/cores/GPUs than may be in their formal allocation. However, in exchange for this "resource burst" flexibility, your burst job may be preempted if the rightful owner of those resources needs them to complete his or her own jobs.
     - In most cases, a user will simply run a job with the QOS set to <kbd>std</kbd>.
@@ -94,7 +94,7 @@ Here, we break down the essential elements of the above PBS script.
 
 ### PBS Procedure
 
-Now that we have covered the basics of a PBS script in the context of an SHPC Condo, we will now talk about actually creating and using the script on your allocation.
+Now that we have covered the basics of a PBS script in the context of an HPC Condo, we will now talk about actually creating and using the script on your allocation.
 
 When creating and editing your PBS script, we will be working on the login node (from Lustre storage) using the text editor, Vi. _If Lustre storage is not available, you may complete this tutorial from within your home directory on NFS._
 

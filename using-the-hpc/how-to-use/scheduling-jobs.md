@@ -1,6 +1,6 @@
 # Scheduling Jobs
 
-SHPC utilizes Torque/Moab to manage jobs that users submit to various queues on a computer system. Each queue represents a group of resources with attributes necessary for the queue's jobs. You can see the list of queues that SHPC has by typing `qstat -q`. **batch** is the default queue.
+HPC utilizes Torque/Moab to manage jobs that users submit to various queues on a computer system. Each queue represents a group of resources with attributes necessary for the queue's jobs. You can see the list of queues that HPC has by typing `qstat -q`. **batch** is the default queue.
 
 📝 **Note:** Do not run jobs on the login nodes. All jobs launched from those nodes will be terminated without notice.
 

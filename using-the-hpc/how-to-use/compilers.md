@@ -1,6 +1,6 @@
 # Compiler Toolchains
 
-SHPC supports four _programming environment (PE)_ modules to easily switch between compilers. Each programming environment contains the full set of compatible compilers and libraries.<br>
+HPC supports four _programming environment (PE)_ modules to easily switch between compilers. Each programming environment contains the full set of compatible compilers and libraries.<br>
 These compilers are: [GNU Collection Compiler (GCC)](https://gcc.gnu.org), the [Intel compiler](https://software.intel.com/en-us/intel-compilers), [The Portland Group (PGI)](https://www.pgroup.com), and the [Numerical Algorithms Group (NAG)](https://www.nag.com/nag-compiler).
 
 📝 **Note:** You cannot use more than one `PE-module` at the same time. For example, if you are working with GNU and then you decide to work with the Intel compiler, first unload the `PE-gnu` module and then load `PE-intel`.

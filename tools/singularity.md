@@ -2,7 +2,7 @@
 
 _Written for software version 2.5.2._
 
-Singularity is a virtualization tool that allows users to containerize workflows, applications, and environments to allow for portability, customization, and reproducibility. Additionally, Singularity is integrated with the Message Passage Interface (MPI) to be used in High Performance Computing (HPC) systems as well as CCLA OpenStack Virtual Machines (VMs) which enables a seamless workflow environment. Lastly, you may also utilize Docker containers with Singularity!
+Singularity is a virtualization tool that allows users to containerize workflows, applications, and environments to allow for portability, customization, and reproducibility. Additionally, Singularity is integrated with the Message Passage Interface (MPI) to be used in High Performance Computing (HPC) systems as well as Virtual Machines (VMs) which enables a seamless workflow environment. Lastly, you may also utilize Docker containers with Singularity!
 
 Note: These instructions are adapted from the [official Singularity documentation](https://www.sylabs.io/docs/).
 

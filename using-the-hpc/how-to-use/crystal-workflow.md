@@ -11,7 +11,7 @@ The workflow is a crystal shaped graph as shown in the figure below.
 
 In the above workflow, each of the boxes represent process and arrows represent the dependency between connected processes. For example, process `P1` produces a data file that is consumed by processes `P2` and `P3`.
 
-Each of the 6 processes of this workflow are implemented in C and bash. Either may be used in the workflows shown below. The initial input file is pre-prepared. The code and data for these workflows are available on open SHPC condo at `/software/T/B/D`. A `Makefile` will build the C executables found in the directory named `c`. The following sections show how this workflow may be orchestrated using each of the three workflow management tools.
+Each of the 6 processes of this workflow are implemented in C and bash. Either may be used in the workflows shown below. The initial input file is pre-prepared. The code and data for these workflows are available on open HPC condo at `/software/T/B/D`. A `Makefile` will build the C executables found in the directory named `c`. The following sections show how this workflow may be orchestrated using each of the three workflow management tools.
 
 #### Nextflow
 
@@ -204,7 +204,7 @@ file out5 <"../c/p5/out5.txt">      = p5(out3);
 file out6 <"../c/outputs/out6.txt"> = p6(out4,out5);
 ```
 
-Assuming the above program is saved in a file called `crystal.swift`, it may be run on Open SHPC like so:
+Assuming the above program is saved in a file called `crystal.swift`, it may be run on Open HPC like so:
 
 ```bash
 $ module purge

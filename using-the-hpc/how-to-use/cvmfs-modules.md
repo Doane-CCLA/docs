@@ -17,20 +17,20 @@ Software accessed via CVMFS is cached locally, thus providing runtime performanc
 
 ## CVMFS within CCLA
 
-CCLA is providing initial access to cvmfs software repositories for evaluation in our SHPC environments.
+CCLA is providing initial access to cvmfs software repositories for evaluation in our HPC environments.
 
 Repositories for the Open Science Grid, and a (currently empty) internal CCLA repo are available on SPHC nodes.
 
-CVMFS software repos may also be accessed by VMs running in CCLA OpenStack and ORNL desktop Linux systems. Instructions will be provided for these use cases, though CCLA support efforts will be focused on CVMFS within the SHPC environment.
+CVMFS software repos may also be accessed by VMs running in CCLA OpenStack and ORNL desktop Linux systems. Instructions will be provided for these use cases, though CCLA support efforts will be focused on CVMFS within the HPC environment.
 
 ### CVMFS Support
 
 For assistance with cvmfs, please either email ccla@doane.edu or use the #cvmfs channel at https://cades.slack.com
 
 
-### CVMS on SHPC Condos
+### CVMS on HPC Condos
 
-The SHPC cluster login and compute nodes have cvmfs configured for the Open Science Grid repo and a new (as yet empty) cades.ornl.gov repo.
+The HPC cluster login and compute nodes have cvmfs configured for the Open Science Grid repo and a new (as yet empty) cades.ornl.gov repo.
 
 Other software repos (CERN, SLAC, FNAL, etc.) may be officially added in the future.
 

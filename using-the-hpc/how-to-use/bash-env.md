@@ -1,6 +1,6 @@
-# Customizing Your Environment in SHPC
+# Customizing Your Environment in HPC
 
-The SHPC environment may be customized to suit your needs.
+The HPC environment may be customized to suit your needs.
 
 <!-- TODO add link to Linux section when it gets published -->
 

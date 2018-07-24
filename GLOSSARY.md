@@ -82,7 +82,7 @@ Simple Storage Service
 
 Secure/SSH File Transfer Protocol
 
-## SHPC
+## HPC
 
 Scalable High-Performance Computing/Cluster
 

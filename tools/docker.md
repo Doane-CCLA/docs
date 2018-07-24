@@ -1,5 +1,7 @@
 # Docker Containers
 
+📝 **Note:** If you are looking to eventually utilize Docker containers on an High Performance Computer (HPC), you may consider using [Singularity](singularity.md) instead, as it is designed to work in HPC systems.
+
 ## Background
 
 [Docker](https://www.docker.com/) is a [container](https://en.wikipedia.org/wiki/Operating-system-level_virtualization) architecture and ecosystem.  A [linux.com article](https://www.linux.com/news/docker-shipping-container-linux-code) nicely summarizes Docker as follows:
@@ -14,23 +16,12 @@ Many of the applications you will be interested in deploying are already configu
 
 ## First Steps
 
-We will assume that you are already reasonably familiar with the CCLA Cloud system.  If not, consider reading the [user documentation](http://support.cades.ornl.gov/user-documentation/_book/).  Make sure you read the section titled: [Launch a VM Instance from an Image](http://support.cades.ornl.gov/user-documentation/_book/openstack/create-vm/launch-vm.html)
-
-However, you get there, launch an Ubuntu 16.04 vm.
-
-![](screenshots/launch.png)
-
-For now, you can keep the setup very basic, just following the instructions outlined in the "Launch a VM Instance" page linked above.
-
-You may eventually be interested in more complicated configurations.  For example, you may need to modify the security group details (say, for example, you want to run a docker container that runs a web server).  For now, we will ignore those details.  However, we provide a more complicated example in our Shiny tutorial.
-
+This tutorial uses an Ubuntu operating system.
 
 
 ## Install Docker
 
-Next, you need to [ssh to your new vm](../../access-vm/access-vm.md).  I named my instance `t1`, so when I login, it shows me as `cades@t1`.  Your prompt will show `cades@whatever-you-named-your-vm`.
-
-Having logged in, it's time to install Docker.  The official Docker documentation [provides a lot of useful information](https://docs.docker.com/engine/installation/linux/ubuntu/#install-using-the-repository) to this end.  Below we summarize only the steps outlined in that article.  If you wish to understand an individual step or if something goes wrong, please refer to the article.
+The official Docker documentation [provides a lot of useful information](https://docs.docker.com/engine/installation/linux/ubuntu/#install-using-the-repository) to this end.  Below we summarize only the steps outlined in that article.  If you wish to understand an individual step or if something goes wrong, please refer to the article.
 
 Otherwise, run:
 
@@ -54,11 +45,11 @@ sudo apt-get update
 sudo apt-get install -y docker docker.io
 ```
 
-And if all is well, you should have Docker installed on your vm.
+And if all is well, you should have Docker installed on your system.
 
 ## Run a Test Container
 
-While still ssh'd to your CCLA Cloud vm, you can test that your setup is working correctly by running:
+You can test that your setup is working correctly by running:
 
 ```bash
 sudo docker pull hello-world

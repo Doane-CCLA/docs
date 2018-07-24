@@ -34,7 +34,7 @@
 - [How to Use](using-the-hpc/how-to-use/how-to-use.md)
     - [Prerequisites](using-the-hpc/how-to-use/prerequisites.md)
     - [Request Access to an Allocation](using-the-hpc/how-to-use/request-access.md)
-    - [Access your Allocation](using-the-hpc/how-to-use/access-shpc.md)
+    - [Access your Allocation](using-the-hpc/how-to-use/access-HPC.md)
     - [Execute a Job](using-the-hpc/how-to-use/execute-a-job.md)
         - [Working with C++](using-the-hpc/how-to-use/examples/cpp.md)
         - [Working with Fortran](using-the-hpc/how-to-use/examples/fortran.md)

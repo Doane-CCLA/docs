@@ -37,7 +37,7 @@ If you need to request an allocation, see [instructions here](../request-access.
 
 ### Example PBS Script
 
-Here is an example PBS script for running a batch job on a SHPC Condo allocation.
+Here is an example PBS script for running a batch job on a HPC Condo allocation.
 
 ```bash
 #!/bin/bash

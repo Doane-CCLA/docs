@@ -28,13 +28,13 @@ _**OpenStack Virtual Machine**_
     <a target="_new" href="screenshots/cyberduck-os-vm.png"><img src="screenshots/cyberduck-os-vm.png" style="border-style:ridge;border-color:#bfbfbf;border-width:1px;width:550px;" /></a>   
     <!-- o_ -->  
 
-_**CCLA OR Condo SHPC, NFS, and Lustre**_
+_**CCLA OR Condo HPC, NFS, and Lustre**_
 -  To set up a new connection, click on the `Open Connection` button in the top left of the window.
 -  In the dropdown menu of the resulting window, select `SFTP (SSH File Transfer Protocol)`.
 -  Server: `tigris.doane.edu`
 -  Username: your UCAMS ID (UID)
 -  Password: your UCAMS password
--  Select your SSH key from the dropdown menu. Be sure to choose the SSH key that allows you to access the CCLA OR SHPC Condo login node.
+-  Select your SSH key from the dropdown menu. Be sure to choose the SSH key that allows you to access the CCLA OR HPC Condo login node.
 -  Click `Connect`.  
     > NFS user home directory path: `~/home/UID/`   
     > Lustre storage path: `~/lustre/tigris/`    

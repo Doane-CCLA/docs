@@ -8,7 +8,7 @@ Typically, a workflow is written in a high level language that is offered and un
 
 ## Workflow tools available on Condos
 
-We currently offer support for the following workflow tools on SHPC:
+We currently offer support for the following workflow tools on HPC:
 
 1. Nextflow
 1. Makeflow

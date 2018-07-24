@@ -5,17 +5,43 @@ Each modulefile contains the information needed to configure the shell for an ap
 
 📝 **Note:** Some modules cannot be used simultaneously, such as an Intel compiler and a GNU compiler ([information on compilers](compilers.md)). If you attempt to _load_ a module that is incompatible with a currently-loaded module, you will be prompted of the conflict. To avoid the error, you may have to _unload_ or _switch_ modules.
 
-## Summary of Module Commands
+#### Summary of Module Commands
 
 Command         | Description
-:-------------- | :-------------
-`module list`   | Lists modules currently loaded in a user's environment. <br>A module is considered loaded when its associated modulefile has been executed <br>and the user's environment contains the changes from the modulefile.
-`module avail`  | Lists all available modules on a system.
-`module show`   | Shows environment changes that will be made by loading a given module.
-`module load`   | Loads a module.
-`module unload` | Unloads a module.
-`module help`   | Shows help for a module.
-`module swap`   | Swaps a currently loaded module for an unloaded module.
+--------------- | -----------------------------------------------------
+module list     | Lists modules currently located in user's environment
+module avail    | Lists all available modules on a system in condensed format
+module avail -l | Lists all available modules on a system in long format
+module display  | Shows environment changes that will be made by loading a given module
+module load     | Loads a module
+module unload   | Unloads a module
+module help     | Shows help for a module
+module swap     | Swaps a currently loaded module for an unloaded module
+
+
+
+**Modules: Local repository**<br>
+By default the local repository is used as a source of software installations. To list available modules, type `module avail`. To load a module, use `module load module_name`. Similarly, unload modules by typing `module unload module_name`.
+
+**Modules: CVMFS-based repository**<br>
+A CVMFS (Cern Virtual File System)-based repository is available for use that has several software packages available for use. To use the CVMFS-based repository run the following commands from your login node:
+
+```bash
+source /software/dev_tools/swtree/cs400/modulefiles/switch-modules.sh
+```
+
+```bash
+switch_modules oasis
+```
+
+After entering the above commands the new repository should be active and the command below will list the software available for use:
+
+```bash
+module avail
+```
+
+Similarly `switch_modules local` will bring back the local modules to use.
+
 
 
 ## Available Modules
@@ -75,4 +101,5 @@ module purge
 
 ### Related Information
 
-- [Environment Customization](condos/software/environment.md)
+- [Environment Customization](how-to-use/environment.md)
+- [CVMFS Modules](cvmfs-modules.md)

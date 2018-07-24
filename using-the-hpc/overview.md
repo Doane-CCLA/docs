@@ -1,15 +1,15 @@
-[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [SHPC Condo User Guide](overview.md) → [Overview](overview.md)
+[CADES](http://support.cades.ornl.gov/) → [User Documentation](../README.md) → [HPC Condo User Guide](overview.md) → [Overview](overview.md)
 
-# Overview of SHPC Condos
+# Overview of HPC Condos
 
-The CADES Scalable HPC (SHPC) Condos consist of two HPC clusters: one in the ORNL Moderate protection zone (CADES Mod) and one in the ORNL Open protection zone (CADES Open).
+The CADES Scalable HPC (HPC) Condos consist of two HPC clusters: one in the ORNL Moderate protection zone (CADES Mod) and one in the ORNL Open protection zone (CADES Open).
 
-To get started using the SHPC Condo, check first to see if you are ready by looking over the [prerequisites](how-to-use/prerequisites.md). Then, learn how to [request access](how-to-use/request-access.md). Finally, you are ready to [access your Condo allocation](how-to-use/access-shpc.md).
+To get started using the HPC Condo, check first to see if you are ready by looking over the [prerequisites](how-to-use/prerequisites.md). Then, learn how to [request access](how-to-use/request-access.md). Finally, you are ready to [access your Condo allocation](how-to-use/access-HPC.md).
 
 _The list of current groups according to divisions at ORNL can be found [here](how-to-use/request-access.md)._
 
 
-## SHPC Condos Resources in Brief
+## HPC Condos Resources in Brief
 
 - [**Hardware**](hardware.md)
   - CPUs: Cray
