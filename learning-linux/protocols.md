@@ -114,13 +114,13 @@ scp user@remotehost:remote_file.txt /some/local/directory
 - #### Copy the file `local_file.txt` from the local host to a remote host directory
 
   ```bash
-  scp local_file.txt user@remotehost.ornl.gov:/some/remote/directory
+  scp local_file.txt user@remotehost:/some/remote/directory
   ```
 
 - #### Copy the directory `local_directory` from the local host to a remote host's directory `remote_directory`
 
   ```bash
-  scp -r local_directory user@remotehost.ornl:/some/remote/directory/remote_directory
+  scp -r local_directory user@remotehost:/some/remote/directory/remote_directory
   ```
 
 - #### Copy the file `fr1.txt` from remote host `rh1` to remote host `rh2`

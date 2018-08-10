@@ -1,6 +1,6 @@
 # Moving Data
 
-CCLA Data Transfer Nodes (DTNs) allow for speedy movement of large data sets into and out of ORNL's network. There are several transfer tool/protocol options to choose from to fit your needs.
+CCLA Data Transfer Nodes (DTNs) allow for speedy movement of large data sets into and out of the network. There are several transfer tool/protocol options to choose from to fit your needs.
 
 1. [Globus](globus-overview.md) has a web interface or command line tools that you can use to transfer data between your personal endpoints or securely share access to your data. *This is the preferred method of transfer for the CCLA.*
 2. Secure copy (scp) via the command line to and from storage locations, including local computers.

@@ -22,13 +22,9 @@ CVMFS software repos may also be accessed by VMs running in OpenStack and deskto
 
 ### CVMS on HPC
 
-The HPC cluster login and compute nodes have cvmfs configured for the Open Science Grid repo and a new (as yet empty) cades.ornl.gov repo.
-
 Other software repos (CERN, SLAC, FNAL, etc.) may be officially added in the future.
 
 #### CVMFS Repos Available
-
-The cades repos is hosted by ORNL which over time will be populated with the CCLA software tree.
 
 The OSG repo contains software distributed and maintained by the Open Science Grid.
 

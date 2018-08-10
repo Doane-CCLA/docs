@@ -154,7 +154,7 @@ clean:
 3. Paste the hello world Makefile code into Vi.
 4. Save your file and return to the Bash shell.
 
-_If you have been following along the CADES tutorials in order, you will already have compiled programs for C, C++, and Fortran. However, if you did not already have compiled codes, the Makefile we have created here would compile all of them when we run our PBS script. In the `hello_world_make.pbs` file, there is a line that says `make all`. This command will run the contents of our Makefile, which will compile the C, C++, and Fortran programs prior to running the job._
+_If you have been following along the tutorials in order, you will already have compiled programs for C, C++, and Fortran. However, if you did not already have compiled codes, the Makefile we have created here would compile all of them when we run our PBS script. In the `hello_world_make.pbs` file, there is a line that says `make all`. This command will run the contents of our Makefile, which will compile the C, C++, and Fortran programs prior to running the job._
 
 ## Step 4: Run the Job
 

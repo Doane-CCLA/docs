@@ -26,8 +26,6 @@ Additional examples can be found in [C++](examples/cpp.md), [Fortran](examples/f
 
 Open and Moderate protection zones each have their own login node. Choose the login node for your protection zone. For this tutorial, we will be using the Open protection zone. If you need to request an allocation, see [instructions here](request-access.md).
 
-📝 **Note:** The Open protection zone can be accessed either using either XCAMS or UCAMS credentials. However, the Moderate protection zone requires an ORNL UCAMS ID.
-
 1. Open a Bash terminal (or PuTTY for Windows users).
 2. Execute `ssh username@hostname`.
 3. When prompted, enter your password.

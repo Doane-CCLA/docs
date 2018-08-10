@@ -1,13 +1,6 @@
 # Request Access for HPC Condo Allocation
 
-You can self-request access with the procedure below. If you are unsure which group to request, or otherwise need assistance, please [contact us](../../SUPPORT.md).
-
-1. **Use the appropriate group link below** and enter your email address (your ORNL address, if available) and click `Continue`.
-- Review the XCAMS user agreement, and select `Agree`.
-- Enter your UCAMS ID (or a new XCAMS user name).
-- Enter your UCAMS password (or a new XCAMS password).
-- Click `Submit` to complete the XCAMS request.  
-- The activation notice will be dispatched to the email address entered above. This process can take up to 24 hours to complete.
+You can request access by [contacting us](../../SUPPORT.md).
 
 ## HPC Groups
 
