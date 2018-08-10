@@ -101,5 +101,5 @@ module purge
 
 ### Related Information
 
-- [Environment Customization](how-to-use/environment.md)
+- [Environment Customization](environment.md)
 - [CVMFS Modules](cvmfs-modules.md)

@@ -58,4 +58,4 @@ qdel $(qselect -u username)
 
 ## Related Information
 
-- [Execute a Job](../how-to-use/execute-a-job.md)
+- [Execute a Job](../execute-a-job.md)

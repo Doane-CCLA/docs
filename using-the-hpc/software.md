@@ -1,6 +1,6 @@
 # HPC Software Configuration
 
-In this section, we discuss the HPC Condos software configuration. Our software environment uses Linux environment [modules](how-to-use/modules.md) to perform this configuration. The software modules available to users also contain preconfigured [compiler toolchains](how-to-use/compilers.md), or programming environments which include parallel compiler wrappers and associated MPI stacks. There are also [workflow tools](how-to-use/workflows.md) that may help with your applications as well.
+In this section, we discuss the HPC Condos software configuration. Our software environment uses Linux environment [modules](modules.md) to perform this configuration. The software modules available to users also contain preconfigured [compiler toolchains](compilers.md), or programming environments which include parallel compiler wrappers and associated MPI stacks. There are also [workflow tools](workflows.md) that may help with your applications as well.
 
 ## Modules
 
@@ -14,7 +14,7 @@ By default the local repository is used as a source of software installations.
 **Modules: CVMFS-based repository**<br>
 A CVMFS (Cern Virtual File System)-based repository is available that has several software packages.
 
-Additional information on HPC modules may be found [here](how-to-use/modules.md).
+Additional information on HPC modules may be found [here](modules.md).
 
 ## Notes on Specific Software Usage
 
