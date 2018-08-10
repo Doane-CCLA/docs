@@ -15,4 +15,4 @@ Globus is primarily used via its web interface, though it is possible to downloa
 
 For a list of common Endpoints or if you'd like to learn how to use Globus Endpoints, [click here for our guide](globus-endpoints.md).
 
-&#128221; **Note:** If you can not login to the DTN, but can to other CCLA systems (like the login nodes), your account may have been temporarily blocked on the DTN. This occurs, for example, upon too many failed password attempts. If so, [contact the  CCLA](../SUPPORT.md).
+&#128221; **Note:** If you can not login to the DTN, but can to other CCLA systems (like the login nodes), your account may have been temporarily blocked on the DTN. This occurs, for example, upon too many failed password attempts. If so, [contact the CCLA](../SUPPORT.md).

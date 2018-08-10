@@ -10,12 +10,9 @@ Download Cyberduck [here](https://cyberduck.io/) and run the installation.
 _**AWS S3 - Scality**_
 -  To set up a new connection, click on the `Open Connection` button in the top left of the window.
 -  In the dropdown menu of the resulting window, select `Amazon S3`.
--  For Scality, change the server field to `tigris-s3.doane.edu`.
+-  For Scality, change the server field to `hostname`.
 -  Paste your Access Key ID and Secret Access Key that was generated when you signed up for the AWS S3 service.
 -  Click `Connect`.   
-    <a target="_new" href="screenshots/cyberduck-aws.png"><img src="screenshots/cyberduck-aws.png" style="border-style:ridge;border-color:#bfbfbf;border-width:1px;width:550px;" /></a>   
-    <!-- o_ -->  
-<!-- TODO @pae will refresh ldap groups to refresh AWS keys -->
 
 _**OpenStack Virtual Machine**_
 -  To set up a new connection, click on the `Open Connection` button in the top left of the window.
@@ -28,7 +25,7 @@ _**OpenStack Virtual Machine**_
     <a target="_new" href="screenshots/cyberduck-os-vm.png"><img src="screenshots/cyberduck-os-vm.png" style="border-style:ridge;border-color:#bfbfbf;border-width:1px;width:550px;" /></a>   
     <!-- o_ -->  
 
-_**CCLA OR Condo HPC, NFS, and Lustre**_
+_**CCLA Condo HPC, NFS, and Lustre**_
 -  To set up a new connection, click on the `Open Connection` button in the top left of the window.
 -  In the dropdown menu of the resulting window, select `SFTP (SSH File Transfer Protocol)`.
 -  Server: `tigris.doane.edu`
@@ -39,8 +36,6 @@ _**CCLA OR Condo HPC, NFS, and Lustre**_
     > NFS user home directory path: `~/home/UID/`   
     > Lustre storage path: `~/lustre/tigris/`    
 
-    <a target="_new" href="screenshots/cyberduck-condo-login.png"><img src="screenshots/cyberduck-condo-login.png" style="border-style:ridge;border-color:#bfbfbf;border-width:1px;width:550px;" /></a>   
-    <!-- o_ -->
 
 ## WinSCP (Windows)
 Download WinSCP [here](https://winscp.net/eng/download.php) and run the installation.   
@@ -56,8 +51,7 @@ _**AWS S3 - Scality**_
 -  Host name: `tigris-s3.doane.edu`
 -  Paste your Access Key ID and Secret Access Key that was generated when you signed up for the AWS S3 service.
 -  Click `Login`.   
-    <a target="_new" href="screenshots/winscp-aws.png"><img src="screenshots/winscp-aws.png" style="border-style:ridge;border-color:#bfbfbf;border-width:1px;width:550px;" /></a>   
-    <!-- o_ -->  
+
 
 _**OpenStack Virtual Machine**_
 -  To set up a new connection, click on `New Site` in the top left of the window.
@@ -79,8 +73,7 @@ _**CCLA HPC, NFS, and Lustre**_
     > NFS user home directory path: `~/home/UID/`   
     > Lustre storage path: `~/lustre/tigris/`    
 
-    <a target="_new" href="screenshots/winscp-condo-login.png"><img src="screenshots/winscp-condo-login.png" style="border-style:ridge;border-color:#bfbfbf;border-width:1px;width:550px;" /></a>   
-    <!-- o_ -->  
+ 
 
 ## Related Tutorials
 * [Scality Object Storage User Guide](data-transfer-storage/scality-guide.md)

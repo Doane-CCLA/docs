@@ -52,21 +52,21 @@ To make sure that your login was successful, type `globus get-identities 'go@glo
 
 * Endpoint Search
     ```
-    $ globus endpoint search 'CCLA OR'
+    $ globus endpoint search 'CCLA HPC'
     ID                                   | Owner                 | Display Name  
     ------------------------------------ | --------------------- | --------------
-    57230a10-7ba2-11e7-8c3b-22000b9923ef | ccla@globusid.org     | CCLA-HPC      
+    57230a10-7ba2-77e7-8c3b-22555b9923ef | cclahpc@globusid.org     | CCLAHPC      
     ```
 * Endpoint Management
     * _Use variables for endpoint IDs:_ Endpoint IDs are cumbersome. You cannot rename them, but you can store them as variables. For example:
         ```
-        epCCLAOR=57230a10-7ba2-11e7-8c3b-22000b9923ef
+        epCCLAHPC=57230a10-7ba2-77e7-8c3b-22555b9923ef
         ```
         Now you can use the variable to display information and manage files (with truncated output):
         ```
         $ globus endpoint show $epCCLA-HPC
         Display Name:              CCLA-HPC
-        ID:                        57230a10-7ba2-11e7-8c3b-22000b9923ef
+        ID:                        57230a10-7ba2-77e7-8c3b-225550b9923ef
         Owner:                     ccla@globusid.org
         Activated:                 True
         Shareable:                 True
@@ -80,11 +80,11 @@ To make sure that your login was successful, type `globus get-identities 'go@glo
         ```
     * _Make a directory:_
         ```
-        globus mkdir $epCCLA-HPC:~/example_dir
+        globus mkdir $epCCLAHPC:~/example_dir
         ```
     * _List the contents of a directory:_
         ```
-        $ globus ls $epCCLA-HPC:~/
+        $ globus ls $epCCLAHPC:~/
         example_dir/
         ccla-user-guide.pdf
         hello-world.c
@@ -93,20 +93,23 @@ To make sure that your login was successful, type `globus get-identities 'go@glo
     * _File transfer between endpoints:_
         * First, search for a second endpoint. Then set that endpoint as a Bash variable.
             ```
-            $ globus endpoint search 'OLCF ATLAS'
-            ID                                   | Owner             | Display Name
-            ------------------------------------ | ----------------- | ------------
-            ef1a9560-7ca1-11e5-992c-22000b96db58 | olcf@globusid.org | OLCF ATLAS  
-            $ epATLAS=ef1a9560-7ca1-11e5-992c-22000b96db58
+            $ globus endpoint search 'Globus Tutorial Endpoint' \
+                  --filter-owner-id 'c699d42e-d274-11e5-bf75-1fc5bf53bb24'
+              Owner           | ID                                   | Display Name
+              --------------- | ------------------------------------ | ---------------------------
+              go@globusid.org | ddb59aef-6d04-11e5-ba46-22000b92c6ec | Globus Tutorial Endpoint 1
+              go@globusid.org | ddb59af0-6d04-11e5-ba46-22000b92c6ec | Globus Tutorial Endpoint 2
+              go@globusid.org | cf9bcaa5-6d04-11e5-ba46-22000b92c6ec | Globus S3 Tutorial Endpoint
+            $ epGLOBUS1=ddb59aef-6d04-11e5-ba46-22000b92c6ec
             ```
-        * Make a single file transfer.
+        * Make a single file transfer from epCCLAHPC to epGLOBUS1.
             ```
-            globus transfer $epCCLA-HPC:/ccla-user-guide.pdf $epATLAS:~/ccla-user-guide.pdf \
+            globus transfer $epCCLAHPC:/ccla-user-guide.pdf $epGLOBUS:~/ccla-user-guide.pdf \
             --label "user-guide"
             ```
         * Make a batch transfer.
             ```
-            $ globus transfer $epCCLA-HPC:/example_dir/ $epATLAS:~/ \
+            $ globus transfer $epCCLAHPC:/example_dir/ $epGLOBUS:~/ \
             --batch --label "CCLA Batch" < in.txt
             ```
 
