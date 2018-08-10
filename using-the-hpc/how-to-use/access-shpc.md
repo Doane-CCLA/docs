@@ -4,7 +4,7 @@ After your [access request](request-access.md) has been approved and you have in
 
 1. Open a Bash terminal (or see [here](prerequisites.md) if you need more help).
 
-2. Execute `ssh username@tigris.doane.edu`.
+2. Execute `ssh username@hostname`.
 
 3. When prompted, enter your password.
 

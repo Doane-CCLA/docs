@@ -24,28 +24,24 @@ The tutorial assumes you have already worked through the [Execute a Job Tutorial
 If you need to request an allocation, see [instructions here](../request-access.md).
 
 1. Open a Bash terminal (or PuTTY for Windows users).
-2. Execute `ssh username@or-condo-login.ornl.gov`.
-
-  - Replace "username" with your XCAMS or UCAMS ID.
-
-3. When prompted, enter your XCAMS or UCAMS password.
-
+2. Execute `ssh username@hostname`.
+3. When prompted, enter your password.
 
 ## Step 2: Create a PBS Script
 
 ### Example PBS Script
 
-Here is an example PBS script for running a batch job on a HPC Condo allocation.
+Here is an example PBS script for running a batch job on a HPC allocation.
 
 ```bash
 #!/bin/bash
 
 #PBS -N mpi_hello_world_cpp
-#PBS -M your_email@ornl.gov
+#PBS -M your_email@example.com
 #PBS -l nodes=1:ppn=16
 #PBS -l walltime=0:00:6:0
-#PBS -W group_list=cades-birthright
-#PBS -A birthright
+#PBS -W group_list=group_name
+#PBS -A group
 #PBS -l qos=burst
 #PBS -V
 
@@ -63,10 +59,8 @@ mpirun hello_world_cpp
 1. From the login node, change your working directory to the desired file system. We are going to use our Lustre allocation for this example. _If Lustre storage is not available, you may complete this tutorial from within your home directory on NFS._
 
   ```bash
-  cd /lustre/or-hydra/cades-birthright/username
+  cd /lustre/group/username
   ```
-
-  Replace "username" with your UCAMS/XCAMS user ID.
 
 2. Use Vi to create and edit your PBS script.
 
@@ -105,7 +99,7 @@ return 0;
 
 ### C++ Procedure
 
-1. Ensure that you are still in your working directory (`/lustre/or-hydra/cades-birthright/username`) using `pwd`.
+1. Ensure that you are still in your working directory (`/lustre/group/username`) using `pwd`.
 2. Use Vi (`vi`) to create your C++ source file within your working directory.
 4. Save your file and return to the Bash shell.
 5. Load the MPI compiler using the PE-gnu module.
@@ -139,7 +133,7 @@ return 0;
   This command will automatically queue your job using Torque and produce a six-digit job number (shown below).<br>
 
   ```bash
-  143295.or-condo-pbs01
+  143295.node
   ```
 
   You can check the status of your job at any time with the `checkjob` command.
@@ -164,16 +158,16 @@ return 0;
   Your output should look something like this (_the output is truncated._):
 
   ```bash
-  Processor or-condo-c229.ornl.gov ID=9  Hello world
-  Processor or-condo-c229.ornl.gov ID=4  Hello world
-  Processor or-condo-c229.ornl.gov ID=0  Hello world
-  Processor or-condo-c229.ornl.gov ID=1  Hello world
-  Processor or-condo-c229.ornl.gov ID=3  Hello world
-  Processor or-condo-c229.ornl.gov ID=5  Hello world
-  Processor or-condo-c229.ornl.gov ID=2  Hello world
-  Processor or-condo-c229.ornl.gov ID=6  Hello world
-  Processor or-condo-c229.ornl.gov ID=7  Hello world
-  Processor or-condo-c229.ornl.gov ID=8  Hello world
+  Processor node ID=9  Hello world
+  Processor node ID=4  Hello world
+  Processor node ID=0  Hello world
+  Processor node ID=1  Hello world
+  Processor node ID=3  Hello world
+  Processor node ID=5  Hello world
+  Processor node ID=2  Hello world
+  Processor node ID=6  Hello world
+  Processor node ID=7  Hello world
+  Processor node ID=8  Hello world
   .
   .
   .

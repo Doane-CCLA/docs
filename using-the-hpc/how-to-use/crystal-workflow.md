@@ -1,7 +1,7 @@
 # Crystal Workflow
 
 CrystalFlow is a hypothetical workflow with low-medium complexity that adequately illustrates the benefits and characteristics of scientific computational workflows.
-> &#128221; **Note:** The code, executables, and test data for the crystal workflow is available on ORNL's public [GitLab](https://code.ornl.gov/km0/cades_workflows).
+> &#128221; **Note:** The code, executables, and test data for the crystal workflow is available on ORNL's public [GitLab](https://code.ornl.gov/user/cades_workflows).
 
 #### About the Crystal Workflow
 The workflow is a crystal shaped graph as shown in the figure below.
@@ -20,7 +20,7 @@ The following code snippet shows how the above workflow would be expressed in Ne
 ```bash
 #!/usr/bin/env nextflow
 
-in1  = file('/home/km0/crystalworkflow/shell/inputs/in1.txt')
+in1  = file('/home/user/crystalworkflow/shell/inputs/in1.txt')
 
 process p1 {
     input:
@@ -222,4 +222,3 @@ $ turbine -n 2 crystal.tic
 ../c/p4/out4.txt
 ../c/outputs/out6.txt
 ```
-<!-- pointless comment -->

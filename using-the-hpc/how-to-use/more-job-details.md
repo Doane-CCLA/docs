@@ -1,10 +1,10 @@
-# Running Jobs
+# More Job Details
 
 AVAILABLE QUEUES:
 
 Queue    | QOS   | Max Walltime | Priority | Description
 -------- | ----- | ------------ | -------- | -----------------------------------------------------------------
-Batch    | burst |              |          | Burst queue allows for use of resources beyond ARM Stratus system
+Batch    | burst |              |          | Burst queue allows for use of resources beyond your system
 high_mem | devel | 4 hours      | high     | Queue for use of CPU nodes
          | std   | 48 hours     | lower    |
          | long  | 2 weeks      | lowest   |
@@ -16,9 +16,9 @@ BURST QUEUE
 
 ```text
 #PBS -N jobname
-#PBS -A tigris-burst
+#PBS -A group
 #PBS -q batch
-#PBS -W group_list=tigris-user
+#PBS -W group_list=group_name
 #PBS -l qos=burst
 #PBS -l nodes=16:ppn=16
 #PBS -l walltime=1:00:00
@@ -28,9 +28,9 @@ STANDARD CPU QUEUE:
 
 ```text
 #PBS -N jobname
-#PBS -A tigris
+#PBS -A group
 #PBS -q high_mem
-#PBS -W group_list=tigris-user
+#PBS -W group_list=group_name
 #PBS -l qos=std
 #PBS -l nodes=16:ppn=16
 #PBS -l walltime=1:00:00
@@ -40,9 +40,9 @@ GPU QUEUE:
 
 ```text
 #PBS -N jobname
-#PBS -A tigris
+#PBS -A group
 #PBS -q gpu_ssd
-#PBS -W group_list=tigris-user
+#PBS -W group_list=group_name
 #PBS -l qos=std
 #PBS -l nodes=2:ppn=16
 #PBS -l walltime=1:00:00
@@ -63,21 +63,21 @@ The batch script is submitted to the batch scheduler where it is parsed. Based o
 2. The Scheduler Options Section: The batch scheduler options are preceded by `#PBS`, making them appear as comments to a shell. PBS will look for `#PBS` options in a batch script from the script’s first line through the first non-comment line. A comment line begins with `#`. `#PBS` options entered after the first non-comment line will not be read by PBS.
 3. The Executable Commands Section: The shell commands follow the last `#PBS` option and represent the main content of the batch job. If any `#PBS` lines follow executable statements, they will be ignored as comments.
 
-The execution section of a script will be interpreted by a shell and can contain multiple lines of executable invocations, shell commands, and comments. When the job's queue wait time is finished, commands within this section will be executed on a service node \(sometimes called a "head node"\) from the set of the job's allocated resources. Under normal circumstances, the batch job will exit the queue after the last line of the script is executed.
+The execution section of a script will be interpreted by a shell and can contain multiple lines of executable invocations, shell commands, and comments. When the job's queue wait time is finished, commands within this section will be executed on a service node (sometimes called a "head node") from the set of the job's allocated resources. Under normal circumstances, the batch job will exit the queue after the last line of the script is executed.
 
 ## An Example Batch Script:
 
 ```text
 #!/bin/bash
-#PBS -A arm
+#PBS -A group
 #PBS -N username
 #PBS -l nodes=16:ppn=8
 #PBS -l walltime=4:00:00
-#PBS -W group_list=tigris-user
+#PBS -W group_list=group_name
 #PBS -q high_mem
 #PBS -j oe
 #PBS -m abe
-#PBS -M email@doane.edu
+#PBS -M your_email@example.com
 #PBS -V
 #PBS -o o.log
 #PBS -e e.log
@@ -88,7 +88,7 @@ The following table summarizes frequently-used options to PBS:
 
 Option | Use                | Description
 ------ | ------------------ | ------------------------------------------------------------------------------
--A     | #PBS -A            | Causes the job time to be charged to ???. The account string, e.g. arm, is typically composed of the three letters followed by three digits and optionally followed by a subproject identifier, The utility showproj can be used to list your valid assigned project ID(s). This option is required by all jobs.
+-A     | #PBS -A            | Causes the job time to be charged to ???. The account string is typically composed of the three letters followed by three digits and optionally followed by a subproject identifier. The utility showproj can be used to list your valid assigned project ID(s). This option is required by all jobs.
 -l     | #PBS -l nodes=     | Maximum number of compute nodes. Jobs cannot request partial nodes.
        | #PBS -l ppn=       | Processors per nodes.
        | #PBS -l walltime=  | maximum wall-clock time, is in the format HH:MM:SS.

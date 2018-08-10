@@ -158,4 +158,3 @@ Hello world
 
 ### Where to go from here?
 * Use the [Crystal Workflow](condo-crystal-workflow.md) with these workflow tools.
-* Come talk to us at CADES if you think one or more of your applications will benefit with the help of the aforementioned workflow tools.

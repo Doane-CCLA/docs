@@ -1,6 +1,6 @@
-# Welcome to the CCLA's Resource Guide
+# Welcome to our Resource Guide
 
-Here is a lovely description of the CCLA.
+Here is a lovely description of your computing center.
 
 ## Features of this Guide
 

@@ -24,11 +24,8 @@ The tutorial assumes you have already worked through the [Execute a Job Tutorial
 If you need to request an allocation, see [instructions here](../request-access.md).
 
 1. Open a Bash terminal (or PuTTY for Windows users).
-2. Execute `ssh username@or-condo-login.ornl.gov`.
-
-  - Replace "username" with your XCAMS or UCAMS ID.
-
-3. When prompted, enter your XCAMS or UCAMS password.
+2. Execute `ssh username@hostname`.
+3. When prompted, enter your password.
 
 
 ## Step 2: Create a PBS Script
@@ -41,11 +38,11 @@ Here is an example PBS script for running a batch job on a HPC Condo allocation.
 #!/bin/bash
 
 #PBS -N mpi_hello_world_py
-#PBS -M your_email@ornl.gov
+#PBS -M your_email@example.com
 #PBS -l nodes=1:ppn=16
 #PBS -l walltime=0:00:6:0
-#PBS -W group_list=cades-birthright
-#PBS -A birthright
+#PBS -W group_list=group_name
+#PBS -A group
 #PBS -l qos=burst
 #PBS -V
 
@@ -63,10 +60,8 @@ mpirun python hello_world.py
 1. From the login node, change your working directory to the desired file system. We are going to use our Lustre allocation for this example. _If Lustre storage is not available, you may complete this tutorial from within your home directory on NFS._
 
   ```bash
-  cd /lustre/or-hydra/cades-birthright/username
+  cd /lustre/group/username
   ```
-
-  Replace "username" with your UCAMS/XCAMS user ID.
 
 2. Use Vi to create and edit your PBS script.
 
@@ -97,7 +92,7 @@ print("Hello, World! I am process ",rank," of ",size," on ",name)
 
 ### Python Procedure
 
-1. Ensure that you are still in your working directory (`/lustre/or-hydra/cades-birthright/username`) using `pwd`.
+1. Ensure that you are still in your working directory (`/lustre/group/username`) using `pwd`.
 2. Use Vi (`vi`) to create your C++ source file within your working directory.
 
   ```bash
@@ -125,7 +120,7 @@ _Python does not need to be compiled._
   This command will automatically queue your job using Torque and produce a six-digit job number (shown below).<br>
 
   ```bash
-  143295.or-condo-pbs01
+  143295.or-node-pbs01
   ```
 
   You can check the status of your job at any time with the `checkjob` command.
@@ -150,16 +145,16 @@ _Python does not need to be compiled._
   Your output should look something like this (_the output is truncated._):
 
   ```bash
-  Hello, World! I am process  11  of  20  on  or-condo-c190.ornl.gov
-  Hello, World! I am process  13  of  20  on  or-condo-c190.ornl.gov
-  Hello, World! I am process  12  of  20  on  or-condo-c190.ornl.gov
-  Hello, World! I am process  0   of  20  on  or-condo-c190.ornl.gov
-  Hello, World! I am process  15  of  20  on  or-condo-c190.ornl.gov
-  Hello, World! I am process  19  of  20  on  or-condo-c190.ornl.gov
-  Hello, World! I am process  7   of  20  on  or-condo-c190.ornl.gov
-  Hello, World! I am process  16  of  20  on  or-condo-c190.ornl.gov
-  Hello, World! I am process  3   of  20  on  or-condo-c190.ornl.gov
-  Hello, World! I am process  9   of  20  on  or-condo-c190.ornl.gov
+  Hello, World! I am process  11  of  20  on  compute_node
+  Hello, World! I am process  13  of  20  on  compute_node
+  Hello, World! I am process  12  of  20  on  compute_node
+  Hello, World! I am process  0   of  20  on  compute_node
+  Hello, World! I am process  15  of  20  on  compute_node
+  Hello, World! I am process  19  of  20  on  compute_node
+  Hello, World! I am process  7   of  20  on  compute_node
+  Hello, World! I am process  16  of  20  on  compute_node
+  Hello, World! I am process  3   of  20  on  compute_node
+  Hello, World! I am process  9   of  20  on  compute_node
   .
   .
   .

@@ -26,20 +26,3 @@ source sourceme_for_mpioverib
 ```
 
 Following the above step, the Singularity containers should use the InfiniBand libraries when running MPI applications.
-
-### Visualizing Remote Data over SSH using Visit
-
-Visit is a well-known visualization software package that is available on HPC. Visit may be configured by creating the profile of HPC Condo to visualize data from your local Visit client. In order to do so, follow the steps as shown below on your local Visit:
-
-1. Start Visit and go to `Options` → `Host profiles`
-2. Press `New Host` and populate the fields as described below
-    - Host nickname: `cades`
-    - Remote host name: `or-condo-login.ornl.gov`
-    - Host name aliases: `or-condo-login#g`
-    - Path to Visit installation: `/software/dev_tools/swtree/cs400_centos7.2_pe2016-08/visit/2.10.3/centos7.2_gnu5.3.0`
-    - Username: `<your_ucams_id>`
-5. Check the `Tunnel data ...` checkbox
-6. Click on `Apply`
-7. Now in the `file` → `open` menu, click on the dropdown (&#9662;) and select `cades`
-8. Enter your password in the dialog box that opens
-9. You should be able to see your data on the HPC file system which can be opened just as if it were local data
