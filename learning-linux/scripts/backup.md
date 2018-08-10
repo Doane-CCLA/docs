@@ -2,9 +2,9 @@
 ```bash
 #!/bin/bash
 
-SRC_DIR="/Users/x0y/Documents/my_work/"
+SRC_DIR="/Users/user/Documents/my_work/"
 
-DEST_DIR="/Users/x0y/Backups/"
+DEST_DIR="/Users/user/Backups/"
 
 FILENAME=Backup-$(date +%-Y%-m%-d)-$(date +%-T).tgz
 

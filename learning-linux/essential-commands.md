@@ -17,7 +17,7 @@
 
 - Linux does not require filename extensions such as `.doc`, `.exe`, and `.abc`. The `.` extension is simply part of the filename. Sometimes data files are named with extensions (.hdf, .cdf, .tar) for human readability, though this is optional.
 
-- A file named with `.` at the beginning will be considered a hidden file.
+- A file with `.` at the beginning will be considered a hidden file.
 
 - You can use the `<TAB>` key to autocomplete commands, paths, and environment variables. For example, you can type `cal` on your terminal followed by `<TAB>` to test this. If there is more than one option for the autocomplete to choose from, pressing `<TAB>` _twice_ will provide a list of all possible options based on what you have typed.
 
@@ -27,13 +27,14 @@
 
 ## Common Shortcuts
 
-macOS     | Windows    | Action
-:-------- | :--------- | :----------------------------------------
-`CMD`+`D` | `CTRL`+`D` | Exit a terminal, same as typing `exit`
-`CMD`+`L` | `CTRL`+`L` | Clears the screen, same as typing `clear`
-`CMD`+`C` | `CTRL`+`C` | Breaks/cancels an ongoing operation
-`CMD`+`Z` | `CTRL`+`Z` | Pauses (stops) an ongoing operation
-`CMD`+`N` | `CTRL`+`N` | Opens a new terminal
+macOS keyboard | Windows keyboard | Action
+:------------- | :--------------- | :----------------------------------------
+`CMD`+`D`      | `CTRL`+`D`       | Exit a terminal, same as typing `exit`
+`CMD`+`L`      | `CTRL`+`L`       | Clears the screen, same as typing `clear`
+`CMD`+`C`      | `CTRL`+`C`       | Breaks/cancels an ongoing operation
+`CMD`+`Z`      | `CTRL`+`Z`       | Pauses (stops) an ongoing operation
+`CMD`+`N`      | `CTRL`+`N`       | Opens a new terminal
+
 
 📝 **Note:** If you want to learn more shortcuts, please consult more documentation [here](shortcuts.md).
 
@@ -43,10 +44,10 @@ macOS     | Windows    | Action
 
   ```bash
   pwd
-  /Users/x0y
+  /Users/user
   ```
 
-  _The output of `pwd` in this case, is the home directory of the user x0y, which is shown with the complete path starting from root(`/`)_
+  _The output of `pwd` in this case, is the home directory of the user user, which is shown with the complete path starting from root(`/`)_
 
 - #### ls: List the contents of the current directory
 
@@ -65,7 +66,7 @@ macOS     | Windows    | Action
 
   _In this case, we are entering the "Documents" directory._
 
-  If you want to go directly to your home directory (x0y), you can type `cd` without any specification of which directory.
+  If you want to go directly to your home directory (user), you can type `cd` without any specification of which directory.
 
   In the case of nested folders, you can jump one directory level upwards by typing `cd ..`
 
@@ -75,7 +76,7 @@ macOS     | Windows    | Action
 
   ```bash
   whoami
-  x0y
+  user
   ```
 
   _This shows the username that is logged in to the current session of the machine._
@@ -112,13 +113,13 @@ macOS     | Windows    | Action
 - #### cat: Creates a single or multiple files, views the contents of a file, concatenates files, and redirects output into the terminal or into files
 
   ```bash
-  cat /Users/x0y/myfile.txt
+  cat /Users/user/myfile.txt
   hello world
   ```
 
-  _In this case, we want to display the content of `myfile.txt` which is located inside the `x0y` directory._
+  _In this case, we want to display the content of `myfile.txt` which is located inside the `user` directory._
 
-  If we are positioned inside the `x0y` directory, all that is needed is `cat myfile.txt` to see its contents, which is "hello world".
+  If we are positioned inside the `user` directory, all that is needed is `cat myfile.txt` to see its contents, which is "hello world".
 
   You can view the content of two files at the same time with the `cat file1.txt file2.txt`.
 
@@ -127,11 +128,11 @@ macOS     | Windows    | Action
 - #### echo: Display a line of text or a string on standard output or into a file
 
   ```bash
-  echo "Hi ORNL"
-  Hi ORNL
+  echo "Hi CCLA"
+  Hi CCLA
   ```
 
-  _In this example, the string `Hi ORNL` is shown because we send that message to the terminal._
+  _In this example, the string `Hi CCLA` is shown because we send that message to the terminal._
 
   To view the value assigned to a variable, add `$` before the variable name:
 
@@ -173,7 +174,7 @@ macOS     | Windows    | Action
 
   In this case the contents of `file_src` (source) will be copied to `file_dest` (destination) and both files will be present in both paths.
 
-  If you need to copy more than one file into a directory, you can type `cp main.c def.h /Users/x0y/mydir/`.
+  If you need to copy more than one file into a directory, you can type `cp main.c def.h /Users/user/mydir/`.
 
   To copy all the files you have (in your current path) with the extension `.c` to a directory called `bak`, you can type `cp *.c bak`. The asterisk (`*`) is a wild-card character.
 
@@ -187,7 +188,7 @@ macOS     | Windows    | Action
 
   If you want to move all of your C files to a subdirectory called `bak`, you can run `mv *.c bak`.
 
-  If you want to create a backup when copying your `.txt` files into the `mybak` directory (to not overwrite existing files within `mybak`) use: `mv -bv *.txt /Users/x0y/mybak`.
+  If you want to create a backup when copying your `.txt` files into the `mybak` directory (to not overwrite existing files within `mybak`) use: `mv -bv *.txt /Users/user/mybak`.
 
 - #### rm: Delete files or directories
 
@@ -233,7 +234,7 @@ macOS     | Windows    | Action
 
   _"Test report title" will be written to the file `test.txt` located inside the `/tmp` directory._
 
-  It is also possible to send all the content of `/tmp/hi.txt` to `/Users/x0y/hello`, by using `/tmp/hi.txt > /Users/x0y/hello`.
+  It is also possible to send all the content of `/tmp/hi.txt` to `/Users/user/hello`, by using `/tmp/hi.txt > /Users/user/hello`.
 
   `Mail -s "Subject" to-address@example.com < Filename` will email the content of `Filename`.
 

@@ -150,25 +150,25 @@ Sheila  |    2514775     |   5600362    | 8.65  | 1189 |        Match to Mom
 Let's work with the files that are located inside `/tmp/test_files`. [Here are the instructions](scripts/loop_for1.md) to create them.
 
 ```bash
-user:test_files x0y$ ls -l
+user:test_files user$ ls -l
 total 0
--rw-r--r--  1 x0y  user  0 Apr 10 09:37 test0.txt
--rw-r--r--  1 x0y  user  0 Apr 10 09:37 test1.txt
--rw-r--r--  1 x0y  user  0 Apr 10 09:37 test2.txt
--rw-r--r--  1 x0y  user  0 Apr 10 09:37 test3.txt
--rw-r--r--  1 x0y  user  0 Apr 10 09:37 test4.txt
--rw-r--r--  1 x0y  user  0 Apr 10 09:37 test5.txt
--rw-r--r--  1 x0y  user  0 Apr 10 09:37 test6.txt
--rw-r--r--  1 x0y  user  0 Apr 10 09:37 test66.txt
+-rw-r--r--  1 user  user  0 Apr 10 09:37 test0.txt
+-rw-r--r--  1 user  user  0 Apr 10 09:37 test1.txt
+-rw-r--r--  1 user  user  0 Apr 10 09:37 test2.txt
+-rw-r--r--  1 user  user  0 Apr 10 09:37 test3.txt
+-rw-r--r--  1 user  user  0 Apr 10 09:37 test4.txt
+-rw-r--r--  1 user  user  0 Apr 10 09:37 test5.txt
+-rw-r--r--  1 user  user  0 Apr 10 09:37 test6.txt
+-rw-r--r--  1 user  user  0 Apr 10 09:37 test66.txt
 ```
 
 - #### find: to search for files based on various search criteria like permissions, user ownership, modification of date/time, size, etc.:
 
   ```bash
-  find . -name "*6*" -user x0y
+  find . -name "*6*" -user user
   ```
 
-  _In this case, the search happens in the current path (`.`) and is looking for those files that have the number 6 in their name, and were created by the user **x0y**._
+  _In this case, the search happens in the current path (`.`) and is looking for those files that have the number 6 in their name, and were created by the user **user**._
 
   If you want to search for a file(s) in which the filename has the characters "conf" and modified 7 days ago, then type: `find / -name "*conf" -mtime 7`.
 

@@ -70,7 +70,7 @@ Check the existence of a file to determine the size of the file as well the quan
 tput clear
 
 #Request the name of the file to be evaluated
-printf "Enter the absolute path of the file, e.g. /home/x0y/your_file\n"
+printf "Enter the absolute path of the file, e.g. /home/user/your_file\n"
 read FILE
 
 #Evaluate the file

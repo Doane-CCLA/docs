@@ -29,7 +29,7 @@ The main configuration file for cron is `/etc/crontab`. If you view the content 
 
   _It will list the crontabs that are currently running on your environment, if you are a `root` user, you can list all the crons that the system has._
 
-  If you have not set any jobs, it will display a message such as `crontab: no crontab for x0y`.
+  If you have not set any jobs, it will display a message such as `crontab: no crontab for user`.
 
 - #### Edit the list of cronjobs
 
@@ -47,13 +47,13 @@ The main configuration file for cron is `/etc/crontab`. If you view the content 
   23 5 * * *  root  zip f1.zip f1
 
   #Every week on Sunday at 03:19 a copy will be made
-  19 3 * * 0  root  scp metis.ornl.gov:/tmp/files .
+  19 3 * * 0  root  scp hostname:/tmp/files .
 
   #Every month on day 6 at 00:23 minutes, a script will be run
   23 0 6 * *  root  ./script
 
   #run a cron job from a script for every Monday, Wednesday and Friday at 7:00 pm
-  0 19 * * 1,3,5 nohup /home/x0y/script.sh > /tmp/script.log 2>&1
+  0 19 * * 1,3,5 nohup /home/user/script.sh > /tmp/script.log 2>&1
   ```
 
 ## Part 2: Using the `at` Command

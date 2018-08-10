@@ -22,7 +22,7 @@ Here is a list of some common environment variables:
 - `$HOME` - Path of your home directory
 - `$PATH` - List of directories where the system checks for programs to run
 - `$LD_LIBRARY_PATH` - List of directories where the system checks for shared libraries to load
-- `$HOSTNAME` - The name of the host, e.g. `or-condos-login`.
+- `$HOSTNAME` - The name of the host, e.g. `tigris.doane.edu`.
 
 📝 **Note:** See the values of all your environment variables by typing `env` on your terminal.
 

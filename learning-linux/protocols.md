@@ -64,7 +64,7 @@ This protocol enables secure connection to the SSH server on a remote machine.
   Host shortcut_name
     HostName 0.1.2.3
     Port 22
-    User x0y
+    User user
     ServerAliveInterval 120
     IdentityFile ~/.ssh/my_key.pem
   ```
@@ -108,31 +108,31 @@ This protocol allows files to be copied to, from, or between different hosts. It
 - #### Copy the file `remote_file.txt` from a remote host to the local host
 
 ```bash
-scp x0y@remotehost.ornl.gov:remote_file.txt /some/local/directory
+scp user@remotehost:remote_file.txt /some/local/directory
 ```
 
 - #### Copy the file `local_file.txt` from the local host to a remote host directory
 
   ```bash
-  scp local_file.txt x0y@remotehost.ornl.gov:/some/remote/directory
+  scp local_file.txt user@remotehost.ornl.gov:/some/remote/directory
   ```
 
 - #### Copy the directory `local_directory` from the local host to a remote host's directory `remote_directory`
 
   ```bash
-  scp -r local_directory x0y@remotehost.ornl:/some/remote/directory/remote_directory
+  scp -r local_directory user@remotehost.ornl:/some/remote/directory/remote_directory
   ```
 
-- #### Copy the file `fr1.txt` from remote host `rh1.ornl.gov` to remote host `rh2.ornl.gov`
+- #### Copy the file `fr1.txt` from remote host `rh1` to remote host `rh2`
 
   ```bash
-  scp x0y@rh1.ornl.gov:/some/remote/directory/fr1.txt x0y@rh2.ornl.gov:/some/remote/directory/
+  scp user@rh1:/some/remote/directory/fr1.txt user@rh2:/some/remote/directory/
   ```
 
 - #### Copy multiple files from a local directory to a remote host home directory
 
   ```bash
-  scp one_file.txt another_file.txt x0y@remotehost.ornl.gov:
+  scp one_file.txt another_file.txt user@remotehost:
   ```
 
 
@@ -140,8 +140,8 @@ scp x0y@remotehost.ornl.gov:remote_file.txt /some/local/directory
 
 To set up `NFS mounts`, we will need at least two Linux/Unix machines. Here we will be using two servers.
 
-- **NFS Server**: ornlserver.org with IP-192.168.0.100
-- **NFS Client**: ornlclient.org with IP-192.168.0.101
+- **NFS Server**: server.org with IP-192.XXX.0.100
+- **NFS Client**: client.org with IP-192.XXX.0.101
 
 ### NFS Server
 
@@ -155,12 +155,12 @@ To set up `NFS mounts`, we will need at least two Linux/Unix machines. Here we w
   mkdir /nfsshare
 
   vi /etc/exports
-  /nfsshare 192.168.0.101(rw,sync,no_root_squash)
+  /nfsshare 192.XXX.0.101(rw,sync,no_root_squash)
 
   service autofs restart
   ```
 
-  _It displays a directory in the `/` partition named "nfsshare" which is being shared with client IP "192.168.0.101" with read and write privileges. You can also use the hostname of a server._
+  _It displays a directory in the `/` partition named "nfsshare" which is being shared with client IP "192.XXX.0.101" with read and write privileges. You can also use the hostname of a server._
 
 ### NFS Client
 
@@ -169,18 +169,18 @@ To set up `NFS mounts`, we will need at least two Linux/Unix machines. Here we w
   To mount a directory in our server to access it locally, we need to find out what shares are available on the remote server or NFS Server with `showmount`.
 
   ```bash
-  showmount -e 192.168.0.100
-  Export list for 192.168.0.100:
-  /nfsshare 192.168.0.101
+  showmount -e 192.XXX.0.100
+  Export list for 192.XXX.0.100:
+  /nfsshare 192.XXX.0.101
   ```
 
-  _This command shows that a directory named `nfsshare` is available at "192.168.0.100" to share with your server._
+  _This command shows that a directory named `nfsshare` is available at "192.XXX.0.100" to share with your server._
 
 - #### To mount a shared NFS directory permanently, we can use following `mount` command:
 
   ```bash
   vi /etc/fstab
-  192.168.0.100:/nfsshare /mnt  nfs defaults 0 0
+  192.XXX.0.100:/nfsshare /mnt  nfs defaults 0 0
 
   service autofs restart
   ```

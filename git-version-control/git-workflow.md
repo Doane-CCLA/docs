@@ -40,8 +40,7 @@ Atom has several packages which enhance the user experience and some of them you
   * linter (aids in code validation, will also need linter package for each language)
   * minimap (displays thumbnail version of document along with your location within it)
   * todo-show (provides visuals for TODO and FIXME tags)
-- Navigate to the GitLab repository in your web browser. For this example, we'll use the `user-documentation` repository. Copy the SSH address to your machine's clipboard.   
-<a target="_new" href="screenshots/git-repo-ssh-address.png"><img src="screenshots/git-repo-ssh-address.png" style="border-style:ridge;border-color:#bfbfbf;border-width:1px;width:550px;" /></a><!-- o_ -->   
+- Navigate to the GitLab repository in your web browser. For this example, we'll use the `user-documentation` repository. Copy the SSH address to your machine's clipboard.     
 - _(Optional)_ Consider adding your SSH key to your GitLab profile so you are not prompted for credentials after every commit. To add your public SSH key to GitLab:   
   - Click on your user image in the top-right of the GitLab window.
   - Select `Settings`.

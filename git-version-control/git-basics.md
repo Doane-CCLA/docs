@@ -1,5 +1,7 @@
 # Git Basics
 
+This tutorial provides an introduction to Git and GitLab. Once you learn how to use GitLab, it is not much different to use GitHub.
+
 **Git**, like other version control (VC) software/system ([see a Wikipedia list](https://en.wikipedia.org/wiki/List_of_version_control_software)), tracks changes to a file system over time. It is typically used in software development but can be used to monitor changes in any file.
 
 > **Git** - a version control system that records the changes to a file or files which allows you to return to a previous version
