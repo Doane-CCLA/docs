@@ -1,6 +1,6 @@
 # Welcome to our Resource Guide
 
-Here is a lovely description of your computing center.
+The CCLA is here to help you learn how to best utilize computer resources to accomplish your goals in research, life, or just for fun.
 
 ## Features of this Guide
 
