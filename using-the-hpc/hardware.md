@@ -6,32 +6,29 @@ A processor in this cluster is commonly referred to as a node and has its own CP
 
 ## Node Information
 
-- **Make**:
-- **Model**:
+- **Make**: Dell PowerEdge
+- **Model**: SC 2435
 
 ## RAM Information
 
-- **Speed**:
-- **Error correction**:
-- **Capacity**:
+-**Type**: DDR2
+- **Speed**: 667 MHz
+- **Capacity**: 8GB
 
 ## CPU Information
 
-- **Make**:
-- **Model**:
-- **Speed**:
-- **Capacity**:
-- **CPU layout**:
+- **Make**: AMD
+- **Model**: Opteron 2220 SE
+- **Speed**: Up to 2.8GHz
+- **CPU layout**: Dual Core
 
-## GPU Information
+**OR**
 
-- **Make**:
-- **Model**:
-- **Speed**:
-- **VRAM**:
-- **Error correction**:
-- **Capacity**:
+- **Make**: AMD
+- **Model**:Opteron 2354
+- **Speed**: Up to 2.2GHz
+- **CPU layout**: Quad Core
 
 ## Network
 
-- InfiniBand Interconnects
+- Ethernet Interconnects
