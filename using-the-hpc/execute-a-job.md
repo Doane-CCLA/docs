@@ -1,4 +1,4 @@
-# Execute a Job on Your SHCP Condo Allocation
+# Execute a Job on Doane's HPC Onyx
 
 The tutorial below shows you how to run Wes Kendall's basic "hello world" program, written in C, using the message passing interface (MPI) to scale across the HPC compute nodes [[1]](#works-cited). This tutorial is intended for users who are new to the HPC environment and leverages a Slurm batch (sbatch) script and a C source code.
 
@@ -9,7 +9,7 @@ Additional examples can be found in [C++](examples/cpp.md), [Fortran](examples/f
 <!-- TOC depthFrom:2 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Step 1: Access the Onyx HPC](#step-1-access-the-onyx-hpc)
-- [Step 2: Create a sbatch Script](#step-2-create-a-sbatch-script)
+- [Step 2: Create an sbatch Script](#step-2-create-a-sbatch-script)
 	- [Example sbatch Script](#example-sbatch-script)
 	- [sbatch Script Breakdown](#sbatch-script-breakdown)
 	- [sbatch Procedure](#sbatch-procedure)
@@ -31,7 +31,7 @@ Additional examples can be found in [C++](examples/cpp.md), [Fortran](examples/f
 
 Once you have connected to the head node, you can proceed to Step 2 and begin assembling your sbatch script.
 
-## Step 2: Create a sbatch Script
+## Step 2: Create an sbatch Script
 
 Below is the sbatch script we are using to run an MPI "hello world" program as a batch job. sbatch scripts use variables to specify things like the number of nodes and cores used to execute your job, estimated walltime for your job, and which compute resources to use (e.g., GPU _vs._ CPU). The sections below feature an example sbatch script for HPC resources, show you how to create and save your own sbatch script, and show you how store the sbatch script on an HPC file system.
 
@@ -43,18 +43,18 @@ Here is an example sbatch script for running a batch job on Onyx. We break down 
 
 ```bash
 #!/bin/bash
-#SBATCH -n 8
+#SBATCH -n 16
 #SBATCH -o test_%A.out
 #SBATCH --mail-user $CHANGE_TO_YOUR_EMAIL
 #SBATCH --mail-type ALL
 
-srun -l hello_world_c
+srun hello_world_c
 
 module purge
 module load gnu
 module load openmpi
 module list
-mpirun hello_world_c
+mpirun -np 16 hello_world_c
 ```
 
 ### sbatch Script Breakdown
@@ -66,12 +66,12 @@ Here, we break down the essential elements of the above PBS script.
 - `#SBATCH -o test_%A.out`: sets the name of the output file; here `%A` will be replaced by slurm with the job number; 
 - `#SBATCH --mail-user $CHANGE_TO_YOUR_EMAIL`: add your email address if you would like your job's status to be emailed to you
 - `#SBATCH --mail-type ALL`: specifies which job status changes you want to be notified about; options include: NONE, BEGIN, END, FAIL, REQUEUE, ALL
-- `srun -l hello_world_c`: tells slurm that you want to run the program 'hello_world_c' in parallel
+- `srun hello_world_c`: tells slurm that you want to run the program 'hello_world_c' in parallel
 - `module purge`: clears any modules currently loaded that might result in a conflict
 - `module load gnu`: loads the gnu module, which loads GCC
 - `module load openmpi`: loads the openmpi module
 - `module list`: confirms the modules that were loaded.
-- `mpirun hello_world_c`: calls MPI to run our `hello_world_c` binary
+- `mpirun -np 16 hello_world_c`: calls MPI to run our `hello_world_c` binary
 
 
 ### sbatch Procedure
@@ -94,7 +94,7 @@ When creating and editing your sbatch script, we will be working on the head nod
 3. Write your sbatch script within nano or paste the contents of your sbatch script into nano.
   - Copy sbacth script from this page
   - Hit Control/Command + p key to paste into nano from Windows/MacOS
-  -
+  
 4. When finished, hit `^X` (control + x key) to exit.
 5. Enter `Y` to save your changes, and press `Return` to save your file and return to the Bash shell.
 
@@ -148,7 +148,6 @@ When creating and editing your `hello_world.c` source code, we will be working o
 
   - Copy C code from this page
   - Hit Control/Command + p key to paste into nano from Windows/MacOS
-  -
 
 4. When finished, hit `^X` (control + x key) to exit.
 5. Enter `Y` to save your changes, and press `Return` to save your file and return to the Bash shell.<br>
@@ -205,7 +204,7 @@ With the C code compiled into a binary (`hello_world_c`), we can now schedule an
   more test_<jobnumber>.out
   ```
 
-  Your output should look something like this, with one line per processor core (8 in this case):
+  Your output should look something like this, with one line per processor core (16 in this case):
 
   ```bash
     Hello world from processor node_name, rank 3 out of 16 processors
