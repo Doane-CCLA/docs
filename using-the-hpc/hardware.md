@@ -11,7 +11,7 @@ A processor in this cluster is commonly referred to as a node and has its own CP
 
 ## RAM Information
 
--**Type**: DDR2
+- **Type**: DDR2
 - **Speed**: 667 MHz
 - **Capacity**: 8GB
 
@@ -21,8 +21,6 @@ A processor in this cluster is commonly referred to as a node and has its own CP
 - **Model**: Opteron 2220 SE
 - **Speed**: Up to 2.8GHz
 - **CPU layout**: Dual Core
-
-**OR**
 
 - **Make**: AMD
 - **Model**:Opteron 2354
