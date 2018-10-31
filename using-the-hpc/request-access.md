@@ -8,7 +8,7 @@ To access HPC Condos, users will need to be added into an appropriate group. Fin
 
 | Division Name       | Division Approver | PBS Directives |
 |---------------------|-------------------|----------------|
-| [Computer Science Dept](#) | John Doe<br>[doej@example.com)](mailto:doej@example.com)  | `#PBS -W group_list=comp_sci` <br> `#PBS -A csci` |
+| TBD | John Doe<br>[doej@example.com)](mailto:doej@example.com)  | `#PBS -W group_list=comp_sci` <br> `#PBS -A csci` |
 
 
 
