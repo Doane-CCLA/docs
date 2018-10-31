@@ -5,12 +5,10 @@ To get started using the HPC, check first to see if you are ready by looking ove
 ## HPC Resources in Brief
 
 - [**Hardware**](hardware.md)
-  - CPUs: Cray
-  - GPUs: NVIDIA
+  - CPUs: AMD Opteron 2220 SE / AMD Opteron 2354
+  - GPUs: N/A
 - [**Storage**](storage.md)
   - NFS
-  - Lustre
 - [**Software**](software.md)
-  - Torque/Moab scheduler
+  - Slurm
   - Modules for package management
-  - Workflow tools
