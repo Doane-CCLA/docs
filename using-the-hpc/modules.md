@@ -23,27 +23,6 @@ module swap     | Swaps a currently loaded module for an unloaded module
 **Modules: Local repository**<br>
 By default the local repository is used as a source of software installations. To list available modules, type `module avail`. To load a module, use `module load module_name`. Similarly, unload modules by typing `module unload module_name`.
 
-**Modules: CVMFS-based repository**<br>
-A CVMFS (Cern Virtual File System)-based repository is available for use that has several software packages available for use. To use the CVMFS-based repository run the following commands from your login node:
-
-```bash
-source /software/dev_tools/swtree/cs400/modulefiles/switch-modules.sh
-```
-
-```bash
-switch_modules oasis
-```
-
-After entering the above commands the new repository should be active and the command below will list the software available for use:
-
-```bash
-module avail
-```
-
-Similarly `switch_modules local` will bring back the local modules to use.
-
-
-
 ## Available Modules
 
 To see a list of available modules, type
@@ -84,7 +63,7 @@ module display your_module
 Unloading a module will avoid conflict and/or messages of failure due to different versions or dependencies.
 
 ```bash
-module unload PE-gnu/1.0
+module unload your_module
 ```
 
 Switching between different module versions can accomplish the task of having to load, unload and load modules in multiple steps. In the following example, `cuda/7.5` is currently loaded. After running the command, `cuda/7.5` is _unloaded_ and `cuda/8.0` is _loaded_.
