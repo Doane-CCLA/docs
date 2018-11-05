@@ -48,13 +48,11 @@ Here is an example sbatch script for running a batch job on Onyx. We break down 
 #SBATCH --mail-user $CHANGE_TO_YOUR_EMAIL
 #SBATCH --mail-type ALL
 
-srun hello_world_c
-
 module purge
 module load gnu
 module load openmpi
 module list
-mpirun -np 16 hello_world_c
+srun --ntasks=${SLURM_NTASKS} --mpi=openmpi hello_world_c
 ```
 
 ### sbatch Script Breakdown
@@ -66,12 +64,11 @@ Here, we break down the essential elements of the above PBS script.
 - `#SBATCH -o test_%A.out`: sets the name of the output file; here `%A` will be replaced by slurm with the job number; 
 - `#SBATCH --mail-user $CHANGE_TO_YOUR_EMAIL`: add your email address if you would like your job's status to be emailed to you
 - `#SBATCH --mail-type ALL`: specifies which job status changes you want to be notified about; options include: NONE, BEGIN, END, FAIL, REQUEUE, ALL
-- `srun hello_world_c`: tells slurm that you want to run the program 'hello_world_c' in parallel
 - `module purge`: clears any modules currently loaded that might result in a conflict
 - `module load gnu`: loads the gnu module, which loads GCC
 - `module load openmpi`: loads the openmpi module
 - `module list`: confirms the modules that were loaded.
-- `mpirun -np 16 hello_world_c`: calls MPI to run our `hello_world_c` binary
+- `srun --ntasks=${SLURM_NTASKS} --mpi=openmpi hello_world_c`: Slurm calls OpenMPI to run our `hello_world_c` binary with the number of processors we specified earlier.
 
 
 ### sbatch Procedure
