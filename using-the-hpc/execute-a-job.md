@@ -139,6 +139,7 @@ With the sbatch script in place, you can now move on to running the script in St
   Your output should look something like this:
 
   ```bash
+  
  2: compute-1
 10: compute-3
  7: compute-2
@@ -198,6 +199,7 @@ compute-4
 compute-4
 compute-4
 compute-4
+
   ```
 
 📝 **Note:** The number and order of the hostnames will be different for you. If you see any errors, try typing in the sbatch script by hand instead of copying and pasting it. Sometimes the clipboard of your OS will bring along extra hidden characters that confuse Bash and Slurm.
