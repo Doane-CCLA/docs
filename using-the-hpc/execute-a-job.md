@@ -1,6 +1,6 @@
 # Execute a Job on Doane's HPC Onyx
 
-The tutorial below shows you how to run Wes Kendall's basic "hello world" program, written in C, using the message passing interface (MPI) to scale across the HPC compute nodes [[1]](#works-cited). This tutorial is intended for users who are new to the HPC environment and leverages a Slurm batch (sbatch) script and a C source code.
+The tutorial below shows you how to run a basic job on Doane's Onyx supercomputer. This tutorial is intended for users who are new to the HPC environment and leverages a Slurm batch (sbatch) script.
 
 Additional examples can be found in [C++](examples/cpp.md), [Fortran](examples/fortran.md) or [Python](examples/python.md) sections.
 
@@ -13,10 +13,7 @@ Additional examples can be found in [C++](examples/cpp.md), [Fortran](examples/f
 	- [Example sbatch Script](#example-sbatch-script)
 	- [sbatch Script Breakdown](#sbatch-script-breakdown)
 	- [sbatch Procedure](#sbatch-procedure)
-- [Step 3: Compile the C Program from Source](#step-3-compile-the-c-program-from-source)
-	- [MPI Hello World Source Code](#mpi-hello-world-source-code)
-	- [C Procedure](#c-procedure)
-- [Step 4: Run the Job](#step-4-run-the-job)
+- [Step 3: Run the Job](#step-3-run-the-job)
 
 <!-- /TOC -->
 
@@ -48,11 +45,14 @@ Here is an example sbatch script for running a batch job on Onyx. We break down 
 #SBATCH --mail-user $CHANGE_TO_YOUR_EMAIL
 #SBATCH --mail-type ALL
 
+srun -l hostname
+
+module avail
 module purge
 module load gnu
 module load openmpi
 module list
-srun --ntasks=${SLURM_NTASKS} --mpi=openmpi hello_world_c
+mpirun -np 16 hostname
 ```
 
 ### sbatch Script Breakdown
@@ -64,11 +64,13 @@ Here, we break down the essential elements of the above PBS script.
 - `#SBATCH -o test_%A.out`: sets the name of the output file; here `%A` will be replaced by slurm with the job number; 
 - `#SBATCH --mail-user $CHANGE_TO_YOUR_EMAIL`: add your email address if you would like your job's status to be emailed to you
 - `#SBATCH --mail-type ALL`: specifies which job status changes you want to be notified about; options include: NONE, BEGIN, END, FAIL, REQUEUE, ALL
-- `module purge`: clears any modules currently loaded that might result in a conflict
-- `module load gnu`: loads the gnu module, which loads GCC
-- `module load openmpi`: loads the openmpi module
+- `srun -l hostname`: Run a parallel job on cluster managed by Slurm, in this case run `hostname` in parallel with `-l` prepending task numbers to lines of output stdout/err.
+- `module avail`: Lists the currently available software modules.
+- `module purge`: Clears any modules currently loaded that might result in a conflict.
+- `module load gnu`: Loads the gnu module.
+- `module load openmpi`: Loads the openmpi module.
 - `module list`: confirms the modules that were loaded.
-- `srun --ntasks=${SLURM_NTASKS} --mpi=openmpi hello_world_c`: Slurm calls OpenMPI to run our `hello_world_c` binary with the number of processors we specified earlier.
+- `mpirun -np 16 hostname`: Slurm calls OpenMPI to run our `hostname` with the number of processors we specified earlier.
 
 
 ### sbatch Procedure
@@ -85,7 +87,7 @@ When creating and editing your sbatch script, we will be working on the head nod
 2. Use nano to create and edit your sbatch script.
 
   ```bash
-  nano hello_world_c.job
+  nano slurm_example.job
   ```
 
 3. Write your sbatch script within nano or paste the contents of your sbatch script into nano.
@@ -95,86 +97,18 @@ When creating and editing your sbatch script, we will be working on the head nod
 4. When finished, hit `^X` (control + x key) to exit.
 5. Enter `Y` to save your changes, and press `Return` to save your file and return to the Bash shell.
 
-With the sbatch script in place, you can now move on to compiling your hello world C code in Step 3.
+With the sbatch script in place, you can now move on to running the script in Step 3.
 
-## Step 3: Compile the C Program from Source
+## Step 3: Run the Job
 
-Below is Wes Kendall's simple "hello world" C program that utilizes MPI to run the job in parallel [[1]](#works-cited). We will need to compile this source code on one of the compute nodes.
+1. Before proceeding, ensure that you are still in your working directory (using `pwd`).
 
-### MPI Hello World Source Code
-
-```c
-#include <mpi.h>
-#include <stdio.h>
-
-int main(int argc, char** argv) {
-    // Initialize the MPI environment.
-    MPI_Init(NULL, NULL);
-    // Get the number of processes.
-    int world_size;
-    MPI_Comm_size(MPI_COMM_WORLD, &world_size);
-    // Get the rank of the process.
-    int world_rank;
-    MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
-    // Get the name of the processor.
-    char processor_name[MPI_MAX_PROCESSOR_NAME];
-    int name_len;
-    MPI_Get_processor_name(processor_name, &name_len);
-    // Print off a hello world message.
-    printf("Hello world from processor %s, rank %d"
-           " out of %d processors\n",
-           processor_name, world_rank, world_size);
-    // Finalize the MPI environment.
-    MPI_Finalize();
-}
-```
-
-
-### C Procedure
-
-When creating and editing your `hello_world.c` source code, we will be working on the head node using the text editor, nano. 
-
-1. Ensure that you are still in your working directory (`/home/username`) using `pwd`.
-2. Use nano (`nano`) to create your C source file within your working directory.
-
-  ```bash
-  nano hello-world.c
-  ```
-
-3. Paste the hello world C code into nano.
-
-  - Copy C code from this page
-  - Hit Control/Command + p key to paste into nano from Windows/MacOS
-
-4. When finished, hit `^X` (control + x key) to exit.
-5. Enter `Y` to save your changes, and press `Return` to save your file and return to the Bash shell.<br>
-  You now have a C source file that you can compile.
-6. Load the MPI compiler using the gnu module.
-
-  ```bash
-  module load gnu
-  ```
-
-7. Compile the C source into a binary executable file.
-
-  ```bash
-  mpicc -o hello_world_c hello_world.c
-  ```
-
-8. Use `ls -al` to verify the presence of the `hello_world_c` binary in your working directory.
-
-With the C code compiled into a binary (`hello_world_c`), we can now schedule and run the job on our compute nodes.
-
-## Step 4: Run the Job
-
-1. Before proceeding, ensure that you are still in your working directory (using `pwd`) and that you still have the gnu module loaded (using `module list`).
-
-  - We need to be in the same path/directory as our sbatch script and our C binary. Use `ls -al` to confirm their presence.
+  - We need to be in the same path/directory as our sbatch script. Use `ls -al` to confirm its presence.
   
 2. Use `sbatch` to schedule your batch job in the queue.
 
   ```bash
-  sbatch hello_world_c.job
+  sbatch slurm_example.job
   ```
 
   This command will automatically queue your job using Slurm and produce a job number.
@@ -184,6 +118,7 @@ With the C code compiled into a binary (`hello_world_c`), we can now schedule an
   ```bash
   squeue <jobnumber>
   ```
+  `squeue <jobnumber>` is likely to not return any information, as this test job takees only a second to complete.
 
   You can also stop your job at any time with the `scancel` command.
 
@@ -224,9 +159,6 @@ With the C code compiled into a binary (`hello_world_c`), we can now schedule an
 
 4. Download your results (using the `scp` command or an SFTP client) or move them to persistent storage. See our [moving data](../../data-transfer-storage/moving-data.md) section for help.
 
-#### Works Cited
-
-1. Wes Kendall, "MPI Hello World," _MPI Tutorial_, accessed June 14, 2017, <http://mpitutorial.com/tutorials/mpi-hello-world/>.
 
 #### Additional Examples
 - [Working with C++](examples/cpp.md)
