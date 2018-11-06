@@ -70,7 +70,7 @@ Here, we break down the essential elements of the above PBS script.
 - `module load gnu`: Loads the gnu module.
 - `module load openmpi`: Loads the openmpi module.
 - `module list`: confirms the modules that were loaded.
-- `mpirun -np 16 hostname`: Slurm calls OpenMPI to run our `hostname` with the number of processors we specified earlier.
+- `mpirun -np 16 hostname`: `hostname` is called again, this time Slurm calls OpenMPI to run `hostname` with the number of processors we specified earlier.
 
 
 ### sbatch Procedure
@@ -136,26 +136,71 @@ With the sbatch script in place, you can now move on to running the script in St
   more test_<jobnumber>.out
   ```
 
-  Your output should look something like this, with one line per processor core (16 in this case):
+  Your output should look something like this:
 
   ```bash
-    Hello world from processor node_name, rank 3 out of 16 processors
-    Hello world from processor node_name, rank 4 out of 16 processors
-    Hello world from processor node_name, rank 6 out of 16 processors
-    Hello world from processor node_name, rank 11 out of 16 processors
-    Hello world from processor node_name, rank 7 out of 16 processors
-    Hello world from processor node_name, rank 14 out of 16 processors
-    Hello world from processor node_name, rank 2 out of 16 processors
-    Hello world from processor node_name, rank 5 out of 16 processors
-    Hello world from processor node_name, rank 8 out of 16 processors
-    Hello world from processor node_name, rank 9 out of 16 processors
-    Hello world from processor node_name, rank 10 out of 16 processors
-    Hello world from processor node_name, rank 12 out of 16 processors
-    Hello world from processor node_name, rank 13 out of 16 processors
-    Hello world from processor node_name, rank 15 out of 16 processors
-    Hello world from processor node_name, rank 0 out of 16 processors
-    Hello world from processor node_name, rank 1 out of 16 processors
+ 2: compute-1
+10: compute-3
+ 7: compute-2
+13: compute-4
+ 1: compute-1
+ 3: compute-1
+ 0: compute-1
+ 8: compute-3
+ 9: compute-3
+11: compute-3
+ 5: compute-2
+ 6: compute-2
+ 4: compute-2
+15: compute-4
+12: compute-4
+14: compute-4
+
+--------------------- /opt/ohpc/pub/moduledeps/gnu-openmpi ---------------------
+   scipy/0.19.1
+
+------------------------- /opt/ohpc/pub/moduledeps/gnu -------------------------
+   R_base/3.3.3    openblas/0.2.20        python3/3.7.1
+   numpy/1.12.1    openmpi/1.10.7  (L)
+
+-------------------------- /opt/ohpc/pub/modulefiles ---------------------------
+   cmake/3.11.1        ohpc       (L)    singularity/2.5.1
+   gnu/5.4.0    (L)    pmix/2.1.1        spack-apps/0.11.2
+   gnu7/7.3.0          prun/1.2   (L)    valgrind/3.13.0
+
+  Where:
+   L:  Module is loaded
+
+Use "module spider" to find all possible modules.
+Use "module keyword key1 key2 ..." to search for all possible modules matching
+any of the "keys".
+
+
+
+Currently Loaded Modules:
+  1) gnu/5.4.0   2) openmpi/1.10.7
+
+ 
+
+compute-1
+compute-1
+compute-1
+compute-3
+compute-1
+compute-3
+compute-3
+compute-3
+compute-2
+compute-2
+compute-2
+compute-2
+compute-4
+compute-4
+compute-4
+compute-4
   ```
+
+📝 **Note:** The number and order of the hostnames will be different for you. If you see any errors, try typing in the sbatch script by hand instead of copying and pasting it. Sometimes the clipboard of your OS will bring along extra hidden characters that confuse Bash and Slurm.
 
 4. Download your results (using the `scp` command or an SFTP client) or move them to persistent storage. See our [moving data](../../data-transfer-storage/moving-data.md) section for help.
 
