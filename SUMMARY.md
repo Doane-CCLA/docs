@@ -35,10 +35,10 @@
 - [Request an Allocation](using-the-hpc/request-access.md)
 - [Access your Allocation](using-the-hpc/access-HPC.md)
 - [Execute a Job](using-the-hpc/execute-a-job.md)
-    <!--- [Working with C++](using-the-hpc/examples/cpp.md)
+    - [Working with C++](using-the-hpc/examples/cpp.md)
     - [Working with Fortran](using-the-hpc/examples/fortran.md)
     - [Working with Python](using-the-hpc/examples/python.md)
-    - [Working with Makefiles](using-the-hpc/examples/makefile.md) --->
+    - [Working with Makefiles](using-the-hpc/examples/makefile.md)
     - [More Job Details](using-the-hpc/examples/more-job-details.md)
 - [Managing Jobs](using-the-hpc/managing-jobs.md)
 - [Modules](using-the-hpc/modules.md)
