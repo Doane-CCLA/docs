@@ -135,71 +135,70 @@ With the sbatch script in place, you can now move on to running the script in St
   ```bash
   more test_<jobnumber>.out
   ```
-
-  Your output should look something like this:
-
-  ```bash
   
- 2: compute-1
-10: compute-3
- 7: compute-2
-13: compute-4
- 1: compute-1
- 3: compute-1
- 0: compute-1
- 8: compute-3
- 9: compute-3
-11: compute-3
- 5: compute-2
- 6: compute-2
- 4: compute-2
-15: compute-4
-12: compute-4
-14: compute-4
+  Your output should look something like this:
+  
+  ```bash
+   2: compute-1
+  10: compute-3
+   7: compute-2
+  13: compute-4
+   1: compute-1
+   3: compute-1
+   0: compute-1
+   8: compute-3
+   9: compute-3
+  11: compute-3
+   5: compute-2
+   6: compute-2
+   4: compute-2
+  15: compute-4
+  12: compute-4
+  14: compute-4
+  
+  --------------------- /opt/ohpc/pub/moduledeps/gnu-openmpi ---------------------
+     scipy/0.19.1
+  
+  ------------------------- /opt/ohpc/pub/moduledeps/gnu -------------------------
+     R_base/3.3.3    openblas/0.2.20        python3/3.7.1
+     numpy/1.12.1    openmpi/1.10.7  (L)
+  
+  -------------------------- /opt/ohpc/pub/modulefiles ---------------------------
+     cmake/3.11.1        ohpc       (L)    singularity/2.5.1
+     gnu/5.4.0    (L)    pmix/2.1.1        spack-apps/0.11.2
+     gnu7/7.3.0          prun/1.2   (L)    valgrind/3.13.0
+  
+    Where:
+     L:  Module is loaded
 
---------------------- /opt/ohpc/pub/moduledeps/gnu-openmpi ---------------------
-   scipy/0.19.1
-
-------------------------- /opt/ohpc/pub/moduledeps/gnu -------------------------
-   R_base/3.3.3    openblas/0.2.20        python3/3.7.1
-   numpy/1.12.1    openmpi/1.10.7  (L)
-
--------------------------- /opt/ohpc/pub/modulefiles ---------------------------
-   cmake/3.11.1        ohpc       (L)    singularity/2.5.1
-   gnu/5.4.0    (L)    pmix/2.1.1        spack-apps/0.11.2
-   gnu7/7.3.0          prun/1.2   (L)    valgrind/3.13.0
-
-  Where:
-   L:  Module is loaded
-
-Use "module spider" to find all possible modules.
-Use "module keyword key1 key2 ..." to search for all possible modules matching
-any of the "keys".
-
-
-
-Currently Loaded Modules:
-  1) gnu/5.4.0   2) openmpi/1.10.7
-
- 
-
-compute-1
-compute-1
-compute-1
-compute-3
-compute-1
-compute-3
-compute-3
-compute-3
-compute-2
-compute-2
-compute-2
-compute-2
-compute-4
-compute-4
-compute-4
-compute-4
-
+  Use "module spider" to find all possible modules.
+  Use "module keyword key1 key2 ..." to search for all possible modules matching
+  any of the "keys".
+  
+  
+  
+  Currently Loaded Modules:
+    1) gnu/5.4.0   2) openmpi/1.10.7
+  
+   
+  
+  compute-1
+  compute-1
+  compute-1
+  compute-3
+  compute-1
+  compute-3
+  compute-3
+  compute-3
+  compute-2
+  compute-2
+  compute-2
+  compute-2
+  compute-4
+  compute-4
+  compute-4
+  compute-4
+  
   ```
 
 📝 **Note:** The number and order of the hostnames will be different for you. If you see any errors, try typing in the sbatch script by hand instead of copying and pasting it. Sometimes the clipboard of your OS will bring along extra hidden characters that confuse Bash and Slurm.
