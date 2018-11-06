@@ -40,6 +40,7 @@ Here is an example sbatch script for running a batch job on Onyx. We break down 
 
 ```bash
 #!/bin/bash
+
 #SBATCH -n 16
 #SBATCH -o test_%A.out
 #SBATCH --mail-user $CHANGE_TO_YOUR_EMAIL
@@ -79,7 +80,8 @@ Now that we have covered the basics of a sbatch script in the context of an HPC,
 
 When creating and editing your sbatch script, we will be working on the head node using the text editor, nano. 
 
-1. From the login node, change your working directory to your home directory. 
+1. From the login node, change your working directory to your home directory.   
+
   ```bash
   cd
   ```
@@ -118,7 +120,8 @@ With the sbatch script in place, you can now move on to running the script in St
   ```bash
   squeue --job <jobnumber>
   ```
-  `squeue --job <jobnumber>` is likely to not return any information, as this test job takees only a second to complete.
+  
+  `squeue --job <jobnumber>` is likely to not return any information, as this test job takes only a second to complete.
 
   You can also stop your job at any time with the `scancel` command.
 
