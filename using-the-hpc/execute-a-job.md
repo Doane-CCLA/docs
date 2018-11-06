@@ -116,14 +116,14 @@ With the sbatch script in place, you can now move on to running the script in St
   You can check the status of your job at any time with the `squeue` command.
 
   ```bash
-  squeue <jobnumber>
+  squeue --job <jobnumber>
   ```
-  `squeue <jobnumber>` is likely to not return any information, as this test job takees only a second to complete.
+  `squeue --job <jobnumber>` is likely to not return any information, as this test job takees only a second to complete.
 
   You can also stop your job at any time with the `scancel` command.
 
   ```bash
-  scancel <jobnumber>
+  scancel --job <jobnumber>
   ```
 
 3. View your results.<br>
