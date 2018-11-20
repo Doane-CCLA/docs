@@ -21,7 +21,7 @@ Additional examples can be found in [C++](examples/cpp.md), [Fortran](examples/f
 
 ## Step 1: Access the Onyx HPC
 
-1. Open a Bash terminal (or PuTTY for Windows users).
+1. Open a Bash terminal (or MobaXterm for Windows users).
 2. Execute `ssh doaneusername@onyx.doane.edu`.
 3. If promted by a security message, type `yes` to continue connection.
 4. When prompted, enter your password.
@@ -30,7 +30,7 @@ Once you have connected to the head node, you can proceed to Step 2 and begin as
 
 ## Step 2: Create an sbatch Script
 
-Below is the sbatch script we are using to run an MPI "hello world" program as a batch job. sbatch scripts use variables to specify things like the number of nodes and cores used to execute your job, estimated walltime for your job, and which compute resources to use (e.g., GPU _vs._ CPU). The sections below feature an example sbatch script for HPC resources, show you how to create and save your own sbatch script, and show you how store the sbatch script on an HPC file system.
+Below is the sbatch script we are using to run an MPI "hostname" program as a batch job. sbatch scripts use variables to specify things like the number of nodes and cores used to execute your job, estimated walltime for your job, and which compute resources to use (e.g., GPU _vs._ CPU). The sections below feature an example sbatch script for HPC resources, show you how to create and save your own sbatch script, and show you how store the sbatch script on an HPC file system.
 
 Consult the [official Slurm documentation](https://slurm.schedmd.com/sbatch.html) for a complete list of sbatch variables.
 
@@ -50,7 +50,7 @@ srun -l hostname
 
 module avail
 module purge
-module load gnu
+module load gnu/5.4.0
 module load openmpi
 module list
 mpirun -np 16 hostname
