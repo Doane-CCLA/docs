@@ -183,22 +183,30 @@ int main(int argc, char **argv)
   more test_<jobnumber>.out
   ```
 
-  Your output should look something like this (_the output is truncated._):
+  Your output should look something like this:
 
   ```bash
-  Processor node ID=9  Hello world
-  Processor node ID=4  Hello world
-  Processor node ID=0  Hello world
-  Processor node ID=1  Hello world
-  Processor node ID=3  Hello world
-  Processor node ID=5  Hello world
-  Processor node ID=2  Hello world
-  Processor node ID=6  Hello world
-  Processor node ID=7  Hello world
-  Processor node ID=8  Hello world
-  .
-  .
-  .
+  Currently Loaded Modules:
+  1) gnu/5.4.0   2) openmpi/1.10.7
+
+ 
+   We have 16 processes.
+   Process 1 reporting for duty.
+   Process 2 reporting for duty.
+   Process 3 reporting for duty.
+   Process 4 reporting for duty.
+   Process 5 reporting for duty.
+   Process 6 reporting for duty.
+   Process 7 reporting for duty.
+   Process 8 reporting for duty.
+   Process 9 reporting for duty.
+   Process 10 reporting for duty.
+   Process 11 reporting for duty.
+   Process 12 reporting for duty.
+   Process 13 reporting for duty.
+   Process 14 reporting for duty.
+   Process 15 reporting for duty.
+
   ```
 
 4. Download your results (using the `scp` command or an SFTP client) or move them to persistent storage. See our [moving data](../../../data-transfer-storage/moving-data.md) section for help.
