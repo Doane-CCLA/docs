@@ -43,6 +43,7 @@ Here is an example sbatch script for running a batch job on Onyx. We break down 
 
 #SBATCH -n 16
 #SBATCH -o test_%A.out
+#SBATCH --error test_%A.err
 #SBATCH --mail-user $CHANGE_TO_YOUR_EMAIL
 #SBATCH --mail-type ALL
 
@@ -62,7 +63,8 @@ Here, we break down the essential elements of the above PBS script.
 
 - `#!/bin/bash`: sets the script type
 - `#SBATCH -n 8`: sets the number of processors that you want to use to run your job; use -N to specify nodes instead of processors
-- `#SBATCH -o test_%A.out`: sets the name of the output file; here `%A` will be replaced by slurm with the job number; 
+- `#SBATCH -o test_%A.out`: sets the name of the output file; here `%A` will be replaced by slurm with the job number;
+- `#SBATCH --error test_%A.err`: sets the name of the error output file; here `%A` will be replaced by slurm with the job number; 
 - `#SBATCH --mail-user $CHANGE_TO_YOUR_EMAIL`: add your email address if you would like your job's status to be emailed to you
 - `#SBATCH --mail-type ALL`: specifies which job status changes you want to be notified about; options include: NONE, BEGIN, END, FAIL, REQUEUE, ALL
 - `srun -l hostname`: Run a parallel job on cluster managed by Slurm, in this case run `hostname` in parallel with `-l` prepending task numbers to lines of output stdout/err.
