@@ -184,13 +184,12 @@ int main(int argc, char **argv)
   ```
 
   Your output should look something like this:
-
+  
   ```bash
   
   Currently Loaded Modules:
   1) gnu/5.4.0   2) openmpi/1.10.7
-
- 
+  
    We have 16 processes.
    Process 1 reporting for duty.
    Process 2 reporting for duty.
