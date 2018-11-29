@@ -38,6 +38,7 @@ Here is an example sbatch script for running a batch job on a HPC allocation.
 
 #SBATCH -n 16
 #SBATCH -o test_%A.out
+#SBATCH --error test_%A.err
 #SBATCH --mail-user $CHANGE_TO_YOUR_EMAIL
 #SBATCH --mail-type ALL
 
