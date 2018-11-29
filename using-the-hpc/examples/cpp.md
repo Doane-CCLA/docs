@@ -186,6 +186,7 @@ int main(int argc, char **argv)
   Your output should look something like this:
 
   ```bash
+  
   Currently Loaded Modules:
   1) gnu/5.4.0   2) openmpi/1.10.7
 
@@ -206,8 +207,8 @@ int main(int argc, char **argv)
    Process 13 reporting for duty.
    Process 14 reporting for duty.
    Process 15 reporting for duty.
-
-  ```
+   
+   ```
 
 4. Download your results (using the `scp` command or an SFTP client) or move them to persistent storage. See our [moving data](../../../data-transfer-storage/moving-data.md) section for help.
 
