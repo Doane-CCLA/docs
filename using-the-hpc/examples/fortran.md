@@ -6,10 +6,10 @@ The tutorial assumes you have already worked through the [Execute a Job Tutorial
 
 <!-- TOC depthFrom:2 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Step 1: Access Your Allocation](#step-1-access-your-allocation)
-- [Step 2: Create a PBS Script](#step-2-create-a-pbs-script)
-	- [Example PBS Script](#example-pbs-script)
-	- [PBS Procedure](#pbs-procedure)
+- [Step 1: Access the Onyx HPC](#step-1-access-the-onyx-hpc)
+- [Step 2: Create an sbatch Script](#step-2-create-a-sbatch-script)
+	- [Example sbatch Script](#example-sbatch-script)
+	- [sbatch Procedure](#sbatch-procedure)
 - [Step 3: Compile the Fortran Program from Source](#step-3-compile-the-fortran-program-from-source)
 	- [MPI Hello World Source Code](#mpi-hello-world-source-code)
 	- [Fortran Procedure](#fortran-procedure)
@@ -19,58 +19,44 @@ The tutorial assumes you have already worked through the [Execute a Job Tutorial
 
 📝 **Note:** Do not execute jobs on the login nodes; only use the login nodes to access your compute nodes. Processor-intensive, memory-intensive, or otherwise disruptive processes running on login nodes will be killed without warning.
 
-## Step 1: Access Your Allocation
+## Step 1: Access the Onyx HPC
 
-If you need to request an allocation, see [instructions here](../request-access.md).
-
-1. Open a Bash terminal (or PuTTY for Windows users).
-2. Execute `ssh username@hostname`.
+1. Open a Bash terminal (or MobaXterm for Windows users).
+2. Execute `ssh doaneusername@onyx.doane.edu`.
 3. When prompted, enter your password.
 
 
-## Step 2: Create a PBS Script
+## Step 2: Create an sbatch Script
 
-### Example PBS Script
+### Example sbatch Script
 
-Here is an example PBS script for running a batch job on a HPC Condo allocation.
-
+Here is an example sbatch script for running a batch job on an HPC like Onyx.
 ```bash
 #!/bin/bash
 
-#PBS -N mpi_hello_world_f
-#PBS -M your_email@example.com
-#PBS -l nodes=1:ppn=16
-#PBS -l walltime=0:00:6:0
-#PBS -W group_list=group_name
-#PBS -A group
-#PBS -l qos=burst
-#PBS -V
+#SBATCH -n 16
+#SBATCH -o test_%A.out
+#SBATCH --error test_%A.err
+#SBATCH --mail-user $CHANGE_TO_YOUR_EMAIL
+#SBATCH --mail-type ALL
 
 module purge
-module load PE-gnu
+module load gnu/5.4.0
+module load openmpi
 module list
-cd $PBS_O_WORKDIR
-pwd
 mpirun hello_world_f
 ```
 
+### sbatch Procedure
 
-### PBS Procedure
-
-1. From the login node, change your working directory to the desired file system. We are going to use our Lustre allocation for this example. _If Lustre storage is not available, you may complete this tutorial from within your home directory on NFS._
-
-  ```bash
-  cd /lustre/group/username
-  ```
-
-2. Use Vi to create and edit your PBS script.
+1. Use nano or Vim (we use Vim here) to create and edit your sbatch script.
 
   ```bash
-  vi hello_world_f.pbs
+  vim slurm_f90_example.job
   ```
 
-3. Create your PBS script within Vi or paste the contents of your PBS script into Vi.
-4. Save your file and return to the Bash shell.
+2. Create your sbatch script within Vim by typing ```i``` for ```insert``` mode or paste the contents of your sbatch script into Vim.
+3. Save your file by typing ```:wq!``` and return to the Bash shell.
 
 
 ## Step 3: Compile the Fortran Program from Source
@@ -97,64 +83,58 @@ end
 
 ### Fortran Procedure
 
-1. Ensure that you are still in your working directory (`/lustre/group/username`) using `pwd`.
-2. Use Vi (`vi`) to create your Fortran source file within your working directory.
+1. Use Vim (`vim`) to create your Fortran source file.
 
   ```bash
-  vi hello_world.f90
+  vim hello_world.f90
   ```
-4. Save your file and return to the Bash shell.
-5. Load the MPI compiler using the PE-gnu module.
+2. Save your file and return to the Bash shell.
+3. Load the MPI compiler using the openmpi module.
 
   ```bash
-  module load PE-gnu
+  module load openmpi
   ```
 
-6. Compile the Fortran source into a binary executable file.
+4. Compile the Fortran source into a binary executable file.
 
   ```bash
   mpifort -o hello_world_f hello_world.f90
   ```
 
-7. Use `ls -al` to verify the presence of the `hello_world_f` binary in your working directory.
+5. Use `ls -al` to verify the presence of the `hello_world_f` binary in your working directory.
 
 
 ## Step 4: Run the Job
 
 1. Before proceeding, ensure that you are still in your working directory (using `pwd`) and that you still have the PE-gnu module loaded (using `module list`).
 
-  - We need to be in the same path/directory as our PBS script and our Fortran binary. Use `ls -al` to confirm their presence.
-  - PE-gnu also loads OpenMPI, GCC, and XALT. Use `module list` to confirm their presence. If necessary, use `module load PE-gnu` to reload the module(s).
+  - We need to be in the same path/directory as our sbatch script and our Fortran binary. Use `ls -al` to confirm their presence.
 
-2. Use `qsub` to schedule your batch job in the queue.
-
-  ```bash
-  qsub hello_world_f.pbs
-  ```
-
-  This command will automatically queue your job using Torque and produce a six-digit job number (shown below).<br>
+2. Use `sbatch` to schedule your batch job in the queue.
 
   ```bash
-  143295.node
+  sbatch slurm_f90_example.job
   ```
 
-  You can check the status of your job at any time with the `checkjob` command.
+  This command will automatically queue your job using slurm and produce a job number.
+  You can check the status of your job at any time with the `squeue` command.
 
   ```bash
-  checkjob 143295
+  squeue --job <jobnumber>
   ```
 
-  You can also stop your job at any time with the `qdel` command.
+  You can also stop your job at any time with the `scancel` command.
 
   ```bash
-  qdel 143295
+  scancel --job <jobnumber>
   ```
+
 
 3. View your results.<br>
-  You can view the contents of these files using the `more` command followed by the file name.<br>
+  You can view the contents of these files using the `less` command followed by the file name.<br>
 
   ```bash
-  more mpi_hello_world_f.o143295
+  less test_<jobnumber>.out
   ```
 
   Your output should look something like this (_the output is truncated._):
