@@ -21,8 +21,6 @@ The tutorial assumes you have already worked through the [Execute a Job Tutorial
 
 ## Step 1: Access the Onyx HPC
 
-If you need to request an allocation, see [instructions here](../request-access.md).
-
 1. Open a Bash terminal (or MobaXterm for Windows users).
 2. Execute `ssh doaneusername@onyx.doane.edu`.
 3. When prompted, enter your password.
@@ -31,7 +29,7 @@ If you need to request an allocation, see [instructions here](../request-access.
 
 ### Example sbatch Script
 
-Here is an example sbatch script for running a batch job on a HPC allocation.
+Here is an example sbatch script for running a batch job on an HPC like Onyx.
 
 ```bash
 #!/bin/bash
@@ -47,7 +45,7 @@ module load gnu/5.4.0
 module load openmpi
 module list
 
-srun hello.mpi
+mpirun hello.mpi
 ```
 
 
@@ -59,8 +57,8 @@ srun hello.mpi
   vim slurm_mpi_example.job
   ```
 
-3. Create your sbatch script within Vim by typing ```i``` for ```insert``` mode or paste the contents of your sbatch script into Vim.
-4. Save your file by typing ```:wq!``` and return to the Bash shell.
+2. Create your sbatch script within Vim by typing ```i``` for ```insert``` mode or paste the contents of your sbatch script into Vim.
+3. Save your file by typing ```:wq!``` and return to the Bash shell.
 
 
 ## Step 3: Compile the C++ Program from Source
@@ -142,13 +140,13 @@ int main(int argc, char **argv)
   module load openmpi
   ```
 
-5. Compile the C++ source into a binary executable file.
+4. Compile the C++ source into a binary executable file.
 
   ```bash
   mpicc wiki_mpi_example.c -o hello.mpi
   ```
 
-7. Use `ls -al` to verify the presence of the `hello.mpi` binary in your working directory.
+5. Use `ls -al` to verify the presence of the `hello.mpi` binary in your working directory.
 
 
 ## Step 4: Run the Job
@@ -177,10 +175,10 @@ int main(int argc, char **argv)
   ```
 
 3. View your results.<br>
-  You can view the contents of these files using the `more` command followed by the file name.<br>
+  You can view the contents of these files using the `less` command followed by the file name.<br>
 
   ```bash
-  more test_<jobnumber>.out
+  less test_<jobnumber>.out
   ```
 
   Your output should look something like this:
