@@ -5,7 +5,8 @@
 
 ## Git Version Control
 - [Git Basics](git-version-control/git-basics.md)
-- [Git and Atom](git-version-control/git-workflow.md)
+- [Git and Atom: GitLab](git-version-control/git-workflow.md)
+- [Git and Atom: GitHub](git-version-control/git-workflow-github.md)
 - [Git in the Command Line](git-version-control/git-command-line.md)
 - [Git Scenarios](git-version-control/git-scenarios.md)
 
