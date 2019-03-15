@@ -52,7 +52,8 @@ srun -l hostname
 module avail
 module purge
 module load gnu/5.4.0
-module load openmpi
+module load spack-apps
+module load openmpi-3.0.0-gcc-5.4.0-clbdgmf
 module list
 mpirun -np 16 hostname
 ```
@@ -70,8 +71,9 @@ Here, we break down the essential elements of the above PBS script.
 - `srun -l hostname`: Run a parallel job on cluster managed by Slurm, in this case run `hostname` in parallel with `-l` prepending task numbers to lines of output stdout/err.
 - `module avail`: Lists the currently available software modules.
 - `module purge`: Clears any modules currently loaded that might result in a conflict.
-- `module load gnu`: Loads the gnu module.
-- `module load openmpi`: Loads the openmpi module.
+- `module load gnu`: Loads the gnu module version 5.4.0.
+- `module load spack-apps`: Loads additional applications managed by the spack software.
+- `module load openmpi-3.0.0-gcc-5.4.0-clbdgmf`: Loads the openmpi module.
 - `module list`: confirms the modules that were loaded.
 - `mpirun -np 16 hostname`: `hostname` is called again, this time Slurm calls OpenMPI to run `hostname` with the number of processors we specified earlier.
 
