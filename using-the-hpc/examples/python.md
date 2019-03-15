@@ -43,7 +43,10 @@ Here is an example sbatch script for running a batch job on an HPC like Onyx.
 
 module purge
 module load gnu/5.4.0
-module load openmpi
+module load spack-apps
+module load openmpi-3.0.0-gcc-5.4.0-clbdgmf
+module load python-3.6.3-gcc-5.4.0-ctlzpuv
+module load py-mpi4py-3.0.0-gcc-5.4.0-wh6rtv7
 module list
 mpirun python hello_world.py
 ```
