@@ -5,7 +5,7 @@ To get started using the HPC, check first to see if you are ready by looking ove
 ## HPC Resources in Brief
 
 - [**Hardware**](hardware.md)
-  - CPUs: AMD Opteron 2220 SE / AMD Opteron 2354
+  - CPUs: 136 AMD Opteron 2220 SE / 16 AMD Opteron 2354
   - GPUs: N/A
 - [**Storage**](storage.md)
   - NFS
