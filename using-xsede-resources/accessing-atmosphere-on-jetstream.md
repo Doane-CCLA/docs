@@ -31,4 +31,4 @@
 10. The "Images" page by default lists 100 Virtual Machine images that are being featured. Below the Navigational menu, we can see we have a new menu which from left to right let us navigate to "Search" or the current page, a "Favorites" page, "My Images" page, "My Image Requests" page, or the "Tags" page.   
 ![Highlighting the VM Images Navigation Menu](./screenshots/vm-images-nav-menu.png "highlighting the VM Images navigation menu, from left to right Search, Favorites, My Images, My Image Requests, Tags.")
 
-You now have successfully logged into Atmosphere GUI for Jetstream and have access to a wide selection of Virtual Machines to run on this system. For more information about finding, favoriting, and running virtual machines take a look at our next section [Using Jetstream Virtual Machines](using-jetstream-virtual-machines.md)
+You now have successfully logged into Atmosphere GUI for Jetstream and have access to a wide selection of Virtual Machines to run on this system. For more information about finding, favoriting, and running virtual machines take a look at our next section [Using Jetstream Virtual Machines](using-jetstream-virtual-machines.md).
