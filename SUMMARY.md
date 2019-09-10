@@ -49,7 +49,9 @@
     - [Crystal Workflow](using-the-hpc/crystal-workflow.md)
 
 ## Xsede Resources
-- [IU/TACC Atmoshpere on Jetstream](using-xsede-resources/accessing-atmosphere-on-jetstream.md)
+- [IU/TACC Atmosphere on Jetstream](using-xsede-resources/accessing-atmosphere-on-jetstream.md)
+- [Using Jetsteam Virtual Machines](using-xsede-resources/using-jetstream-virtual-machines.md)
+
 
 ## Data Transfer and Storage
 - [Moving Data](data-transfer-and-storage/moving-data.md)
