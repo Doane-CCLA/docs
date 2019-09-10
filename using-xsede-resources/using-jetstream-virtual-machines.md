@@ -48,12 +48,14 @@
 ![Customization options for the new VM instance](https://github.com/Doane-CCLA/docs/blob/master/images-tutorials/new-instance-4.png "Customization options for the new VM instance")
 
 16. We will cover the advanced options in another tutorial. For now, when you are happy with your configuration options, click the "LAUNCH INSTANCE" button. This and the next few steps to launch the VM will take around 15 minutes to complete.
-![Clicking the LAUNCH INSTANCE button to start the new VM]9https://github.com/Doane-CCLA/docs/blob/master/images-tutorials/new-instance-5.png "Click the LAUNCH INSTANCE button to start the new VM")
+![Clicking the LAUNCH INSTANCE button to start the new VM](https://github.com/Doane-CCLA/docs/blob/master/images-tutorials/new-instance-5.png "Click the LAUNCH INSTANCE button to start the new VM")
 
 17. Once it is done loading, the VM will be added to the queue to be built and will have a status of "Build".
+![View of the deployment status for our new VM instance](https://github.com/Doane-CCLA/docs/blob/master/images-tutorials/new-instance-6.png "View of the deployment status for our new VM instance.")
 
 18. Once the VM is successuflly built, it will move to the "Active" status.
+![Updated view of the deployment status for our VM instance](https://github.com/Doane-CCLA/docs/blob/master/images-tutorials/new-instance-7.png "Updated view of the deployment status for our new VM instance")
 
-19. When the VM is done ebuing built, activated, and deployed, the status will turn to a green dot with status of "". A note of warning, now that the VM is active, it WILL be chargin the allocation account. Please make sure to shelve your instance once you are done with it to quit being charged for the resources. 
+19. When the VM is done ebuing built, scheduled, and deployed, the status will turn from a yellow dot, to a green dot. A note of warning, now that the VM is active, it WILL be chargin the allocation account. Please make sure to shelve your instance once you are done with it to quit being charged for the resources. 
 
 20. To shelve or "turn off" your VM 
