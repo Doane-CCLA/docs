@@ -50,7 +50,7 @@
 
 ## Xsede Resources
 - [IU/TACC Atmosphere on Jetstream](using-xsede-resources/accessing-atmosphere-on-jetstream.md)
-- [Using Jetsteam Virtual Machines](using-xsede-resources/using-jetstream-virtual-machines.md)
+- [Using Jetstream Virtual Machines](using-xsede-resources/using-jetstream-virtual-machines.md)
 
 
 ## Data Transfer and Storage
