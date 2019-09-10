@@ -48,6 +48,9 @@
 - [Workflows](using-the-hpc/workflows.md)
     - [Crystal Workflow](using-the-hpc/crystal-workflow.md)
 
+## Xsede Resources
+- [IU/TACC Atmoshpere on Jetstream](using-xsede-resources/accessing-atmosphere-on-jetstream.md)
+
 ## Data Transfer and Storage
 - [Moving Data](data-transfer-and-storage/moving-data.md)
     - [Graphical Client SFTP](data-transfer-and-storage/graphical-sftp.md)
