@@ -35,4 +35,25 @@
 11. Now we have successfully created a new project.
 ![View of our new project](https://github.com/Doane-CCLA/docs/blob/master/images-tutorials/create-new-project-3.png "View of our new project")
 
-12. 
+12. Click on the Project panel to open up the detail page for the project.
+![View of the details page for our new project](https://github.com/Doane-CCLA/docs/blob/master/images-tutorials/new-instance-1.png "View of the details page for our new project")
+
+13. From here we will want to click the pink "NEW" button which will open a drop down menu. In the drop down menu select "Instance" to begin the process of making a Virtual Machine.
+![Click the NEW button and select Instance from the drop down menu](https://github.com/Doane-CCLA/docs/blob/master/images-tutorials/new-instance-2.png "Click the NEW button and select Instance from the drop down menu")
+
+14. Once the new popup page opens, click on the "Show Favorites" tab to bring up our favorited VM images.
+![Clicking Show Favorites in the new INstance popup page](https://github.com/Doane-CCLA/docs/blob/master/images-tutorials/new-instance-3.png "Click the Show Favorites in the new Instance popup page")
+
+15. Select you desired VM Image you want to use for your new Virtual Machine. After doing that, you will be brought to the next step in the Instance Wizard. Here you can specify the information for the VM. These options include the Instance Name, version of the Base Image to use, the Project that the VM she be housed in, which allocation account that Jetstream should charge for the VM, and the physical Size for the VM. Jetstream also provides a graphical representation of how much of the allocation resources this instance will use given the selected configuration.
+![Customization options for the new VM instance](https://github.com/Doane-CCLA/docs/blob/master/images-tutorials/new-instance-4.png "Customization options for the new VM instance")
+
+16. We will cover the advanced options in another tutorial. For now, when you are happy with your configuration options, click the "LAUNCH INSTANCE" button. This and the next few steps to launch the VM will take around 15 minutes to complete.
+![Clicking the LAUNCH INSTANCE button to start the new VM]9https://github.com/Doane-CCLA/docs/blob/master/images-tutorials/new-instance-5.png "Click the LAUNCH INSTANCE button to start the new VM")
+
+17. Once it is done loading, the VM will be added to the queue to be built and will have a status of "Build".
+
+18. Once the VM is successuflly built, it will move to the "Active" status.
+
+19. When the VM is done ebuing built, activated, and deployed, the status will turn to a green dot with status of "". A note of warning, now that the VM is active, it WILL be chargin the allocation account. Please make sure to shelve your instance once you are done with it to quit being charged for the resources. 
+
+20. To shelve or "turn off" your VM 
