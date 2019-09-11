@@ -57,6 +57,15 @@
 18. Once the VM is successfully built, it will move to the Activity status of "Initalizing".   
 ![Updated view of the deployment status for our VM instance](./screenshots/new-instance-7.png "Updated view of the deployment status for our new VM instance")
 
-19. When the VM is done being built, scheduled, and deployed, the status will turn from a yellow dot, to a green dot. A note of warning, now that the VM is active, it WILL be charging the allocation account. Please make sure to shelve your instance once you are done with it to quit being charged for the resources.
+19. When the VM is done being built, scheduled, and deployed, the status will turn from a yellow dot, to a green dot. A note of warning, now that the VM is active, it WILL be charging the allocation account. Please make sure to shelve or suspend your instance once you are done with it to quit being charged for the resources.   
+![Fully deployed VM Image](./screenshots/new-instance8.png "Fully deployed VM image ready for use.")
 
-20. To shelve or "turn off" your VM.
+20. You may have noticed that the name of your new VM instance shows up as a link. Go ahead and click on that link as highlighted in the below image.   
+![Clicking the VM name link](./screenshots/using-vm-1.png "Clicking the VM name link")
+
+21. On this new page, we can see all of the useful information about our VM on the left side. The menu on the right side of the page shows us some useful options for interacting with the VM. The most important options in the right side menu are "Suspend" and "Open Web Desktop".   
+![View of VM details page](./screenshots/using-vm-2.png "View of VM details page")
+
+22. Now that we have gone through all of the trouble to build and initalize our VM instance, let's go ahead and connect to the VM and use it. Click on the "Open Web Desktop" button in the right side menu as shown below.   
+![Clicking the Open Web Desktop button](./screenshots/using-vm-3.png "Clicking the Open Web Desktop button")
+
